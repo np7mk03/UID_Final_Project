@@ -1,0 +1,76 @@
+<div class="muscle-recovery-map">
+    <h5 class="text-center mb-3">Muscle Group Recovery Times</h5>
+    <div class="muscle-map-container">
+        <div class="muscle-map">
+            <svg viewBox="0 0 200 400" class="human-figure">
+                <!-- Front view body parts -->
+                <path d="M100,30 C120,30 130,45 130,60 C130,75 120,85 100,85 C80,85 70,75 70,60 C70,45 80,30 100,30" class="body-part" data-part="shoulders" data-recovery="48-72" data-info="Deltoids (front, side, rear)"></path>
+                <rect x="85" y="85" width="30" height="50" rx="5" class="body-part" data-part="chest" data-recovery="48-72" data-info="Pectoralis major and minor"></rect>
+                <rect x="70" y="85" width="15" height="60" rx="5" class="body-part" data-part="biceps" data-recovery="24-48" data-info="Biceps brachii and brachialis"></rect>
+                <rect x="115" y="85" width="15" height="60" rx="5" class="body-part" data-part="triceps" data-recovery="24-48" data-info="Triceps brachii (long, lateral, medial heads)"></rect>
+                <rect x="85" y="135" width="30" height="70" rx="5" class="body-part" data-part="abs" data-recovery="24-48" data-info="Rectus abdominis, obliques"></rect>
+                <rect x="70" y="205" width="25" height="70" rx="5" class="body-part" data-part="quads" data-recovery="72-96" data-info="Quadriceps (4 muscles)"></rect>
+                <rect x="105" y="205" width="25" height="70" rx="5" class="body-part" data-part="quads" data-recovery="72-96" data-info="Quadriceps (4 muscles)"></rect>
+                <rect x="70" y="275" width="25" height="40" rx="5" class="body-part" data-part="calves" data-recovery="24-48" data-info="Gastrocnemius and soleus"></rect>
+                <rect x="105" y="275" width="25" height="40" rx="5" class="body-part" data-part="calves" data-recovery="24-48" data-info="Gastrocnemius and soleus"></rect>
+                
+                <!-- Turn around button -->
+                <g class="rotate-button" id="rotate-muscle-map">
+                    <circle cx="180" cy="30" r="15" fill="#4361ee"></circle>
+                    <path d="M180,22 A8,8 0 1,1 172,30" stroke="white" stroke-width="2" fill="none"></path>
+                    <polygon points="172,26 172,34 180,30" fill="white"></polygon>
+                </g>
+                
+                <!-- Back view body parts (initially hidden) -->
+                <path d="M100,30 C120,30 130,45 130,60 C130,75 120,85 100,85 C80,85 70,75 70,60 C70,45 80,30 100,30" class="body-part back-view" data-part="traps" data-recovery="48-72" data-info="Trapezius (upper, middle, lower)"></path>
+                <rect x="85" y="85" width="30" height="70" rx="5" class="body-part back-view" data-part="back" data-recovery="48-72" data-info="Latissimus dorsi, rhomboids, erector spinae"></rect>
+                <rect x="70" y="85" width="15" height="60" rx="5" class="body-part back-view" data-part="triceps" data-recovery="24-48" data-info="Triceps brachii (long, lateral, medial heads)"></rect>
+                <rect x="115" y="85" width="15" height="60" rx="5" class="body-part back-view" data-part="biceps" data-recovery="24-48" data-info="Biceps brachii and brachialis"></rect>
+                <rect x="85" y="155" width="30" height="50" rx="5" class="body-part back-view" data-part="lower-back" data-recovery="48-72" data-info="Erector spinae, multifidus"></rect>
+                <rect x="70" y="205" width="25" height="70" rx="5" class="body-part back-view" data-part="hamstrings" data-recovery="72-96" data-info="Hamstrings (3 muscles)"></rect>
+                <rect x="105" y="205" width="25" height="70" rx="5" class="body-part back-view" data-part="hamstrings" data-recovery="72-96" data-info="Hamstrings (3 muscles)"></rect>
+                <rect x="70" y="275" width="25" height="40" rx="5" class="body-part back-view" data-part="calves" data-recovery="24-48" data-info="Gastrocnemius and soleus"></rect>
+                <rect x="105" y="275" width="25" height="40" rx="5" class="body-part back-view" data-part="calves" data-recovery="24-48" data-info="Gastrocnemius and soleus"></rect>
+            </svg>
+        </div>
+        
+        <div class="muscle-info-panel">
+            <div class="info-header">
+                <h6 id="muscle-name">Select a muscle group</h6>
+                <div class="recovery-badge" id="recovery-time">Recovery: 24-48 hours</div>
+            </div>
+            <div class="info-content">
+                <p id="muscle-description">Click on a muscle group to see detailed recovery information.</p>
+                
+                <div class="recovery-factors">
+                    <h6>Recovery Factors</h6>
+                    <div class="factor">
+                        <span>Sleep Quality</span>
+                        <div class="factor-meter">
+                            <div class="factor-fill" id="sleep-factor"></div>
+                        </div>
+                    </div>
+                    <div class="factor">
+                        <span>Nutrition</span>
+                        <div class="factor-meter">
+                            <div class="factor-fill" id="nutrition-factor"></div>
+                        </div>
+                    </div>
+                    <div class="factor">
+                        <span>Training Intensity</span>
+                        <div class="factor-meter">
+                            <div class="factor-fill" id="intensity-factor"></div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="training-tips" id="muscle-tips">
+                    <h6>Training Tips</h6>
+                    <ul>
+                        <li>Select a muscle group to see specific training tips</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

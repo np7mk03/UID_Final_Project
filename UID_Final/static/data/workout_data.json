@@ -1,0 +1,117 @@
+{
+    "learn_sections": [
+        {
+            "title": "What Do Muscles Need to Grow?",
+            "content": "volume_content.html"
+        },
+        {
+            "title": "Training Frequency",
+            "content": "frequency_content.html"
+        },
+        {
+            "title": "Recovery and Rest",
+            "content": "rest_content.html"
+        },
+        {
+            "title": "Workout Split Types",
+            "content": "split_types_content.html"
+        },
+        {
+            "title": "Matching Your Goals",
+            "content": "goals_content.html"
+        },
+        {
+            "title": "Common Pitfalls",
+            "content": "pitfalls_content.html"
+        }
+    ],
+    "quiz_questions": [
+        {
+            "question": "How many times should each muscle group be trained per week for optimal growth?",
+            "options": [
+                "Once",
+                "2-3 times",
+                "Every day",
+                "Only when not sore"
+            ],
+            "correct": 1,
+            "explanation": "Research shows training muscle groups 2-3 times per week leads to better growth than once per week."
+        },
+        {
+            "question": "What is the recommended set range per week for a major muscle group for an intermediate lifter?",
+            "options": [
+                "5-8 sets",
+                "10-12 sets",
+                "12-16 sets",
+                "20-25 sets"
+            ],
+            "correct": 2,
+            "explanation": "Intermediate lifters should aim for 12-16 sets per week for major muscle groups like chest, back, and legs."
+        },
+        {
+            "question": "You're on a Push/Pull/Legs split. You trained Push on Monday and Pull on Tuesday. What should you train on Wednesday?",
+            "options": [
+                "Push again",
+                "Pull again",
+                "Legs",
+                "Take a rest day"
+            ],
+            "correct": 2,
+            "explanation": "The logical progression would be to train Legs on Wednesday, as you haven't trained them yet and this avoids overtraining Push or Pull muscles."
+        },
+        {
+            "question": "Which of these is a common pitfall in workout split design?",
+            "options": [
+                "Including rest days",
+                "Training each muscle group twice per week",
+                "Hitting the same muscle groups on consecutive days",
+                "Using an Upper/Lower split"
+            ],
+            "correct": 2,
+            "explanation": "Training the same muscle groups on consecutive days doesn't allow for proper recovery, which is when muscle growth occurs."
+        },
+        {
+            "question": "Which split type would be most appropriate for someone who can only train 3 days per week?",
+            "options": [
+                "Push/Pull/Legs",
+                "Upper/Lower",
+                "Full Body",
+                "Body Part Split"
+            ],
+            "correct": 2,
+            "explanation": "A Full Body split is ideal for 3 days per week as it allows you to train all muscle groups multiple times with adequate recovery between sessions."
+        }
+    ],
+    "split_types": [
+        {
+            "id": "ppl",
+            "name": "Push/Pull/Legs",
+            "description": "Train 5-6 days per week, grouping exercises by movement pattern",
+            "level": "Intermediate",
+            "workout_blocks": [
+                "push",
+                "pull",
+                "legs"
+            ]
+        },
+        {
+            "id": "upper-lower",
+            "name": "Upper/Lower",
+            "description": "Train 4 days per week, dividing workouts by body region",
+            "level": "All Levels",
+            "workout_blocks": [
+                "upper",
+                "lower"
+            ]
+        },
+        {
+            "id": "full-body",
+            "name": "Full Body",
+            "description": "Train 3 days per week, hitting all muscle groups each session",
+            "level": "Beginner Friendly",
+            "workout_blocks": [
+                "full-body"
+            ]
+        }
+    ]
+}

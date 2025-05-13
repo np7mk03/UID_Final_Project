@@ -1,0 +1,76 @@
+<div class="recovery-timeline mb-4">
+    <h5 class="text-center mb-3">Muscle Recovery Timeline</h5>
+    <div class="timeline-container">
+        <!-- Timeline Navigation Tabs -->
+        <div class="timeline-tabs">
+            <button class="timeline-tab active" data-phase="protein-synthesis">Protein Synthesis Begins</button>
+            <button class="timeline-tab" data-phase="peak-synthesis">Peak Muscle Protein Synthesis</button>
+            <button class="timeline-tab" data-phase="recovery-complete">Recovery Complete</button>
+        </div>
+        
+        <!-- Timeline Visual -->
+        <div class="timeline-visual">
+            <!-- Timeline Track with Markers -->
+            <div class="timeline-track">
+                <div class="timeline-marker" style="left: 0%">
+                    <div class="marker-point workout"></div>
+                    <div class="marker-label">Workout</div>
+                </div>
+                <div class="timeline-marker" style="left: 33%">
+                    <div class="marker-point synthesis"></div>
+                    <div class="marker-label">24-48 Hours</div>
+                </div>
+                <div class="timeline-marker" style="left: 66%">
+                    <div class="marker-point peak"></div>
+                    <div class="marker-label">48-72 Hours</div>
+                </div>
+                <div class="timeline-marker" style="left: 100%">
+                    <div class="marker-point complete"></div>
+                    <div class="marker-label">72-96 Hours</div>
+                </div>
+            </div>
+            
+            <!-- Wave Graphs -->
+            <div class="wave-container">
+                <div class="wave protein-wave">
+                    <svg viewBox="0 0 1200 200" preserveAspectRatio="none">
+                        <path class="wave-path protein-path" d="M0,100 C150,160 350,40 500,100 C650,160 850,40 1000,100 C1150,160 1200,100 1200,100 L1200,200 L0,200 Z"></path>
+                    </svg>
+                </div>
+                <div class="wave soreness-wave">
+                    <svg viewBox="0 0 1200 200" preserveAspectRatio="none">
+                        <path class="wave-path soreness-path" d="M0,100 C150,40 350,160 500,100 C650,40 850,160 1000,100 C1150,40 1200,100 1200,100 L1200,200 L0,200 Z"></path>
+                    </svg>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Phase Information Panels -->
+        <div class="phase-info-container">
+            <div class="phase-info active" id="protein-synthesis-info">
+                <h6>Protein Synthesis Begins</h6>
+                <p>The body starts repairing damaged muscle fibers and initiating the recovery process. This phase begins immediately after your workout and continues for 24-48 hours.</p>
+            </div>
+            <div class="phase-info" id="peak-synthesis-info">
+                <h6>Peak Muscle Protein Synthesis</h6>
+                <p>Recovery reaches its highest point as the body works intensively to repair and build muscle tissue. This typically occurs 24-48 hours after training.</p>
+            </div>
+            <div class="phase-info" id="recovery-complete-info">
+                <h6>Recovery Complete</h6>
+                <p>Most muscle groups have fully recovered and are ready for the next training session. This typically takes 48-72 hours for most muscle groups, though larger muscle groups may take longer.</p>
+            </div>
+        </div>
+        
+        <!-- Timeline Legend -->
+        <div class="timeline-legend">
+            <div class="legend-item">
+                <div class="legend-color protein"></div>
+                <div class="legend-text">Protein Synthesis</div>
+            </div>
+            <div class="legend-item">
+                <div class="legend-color soreness"></div>
+                <div class="legend-text">Muscle Soreness</div>
+            </div>
+        </div>
+    </div>
+</div>

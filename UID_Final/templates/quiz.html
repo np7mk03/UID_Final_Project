@@ -1,0 +1,636 @@
+{% extends "layout.html" %}
+
+{% block title %}Quiz{% endblock %}
+
+{% block content %}
+<div class="container py-5">
+    <!-- Page Header -->
+    <div class="text-center mb-5">
+        <h1 class="display-5 fw-bold">Knowledge <span class="text-primary">Check</span></h1>
+        <p class="lead">Test what you've learned with this visual quiz</p>
+    </div>
+    
+    <div class="row justify-content-center">
+        <div class="col-lg-8">
+            <div class="card shadow-lg border-0 mb-5">
+                <div class="card-header bg-primary text-white p-4 d-flex justify-content-between align-items-center">
+                    <h2 class="h4 mb-0">Strength Training Quiz</h2>
+                    <div class="d-flex align-items-center">
+                        <span class="me-2">Question</span>
+                        <span class="bg-white text-primary fw-bold rounded-circle d-inline-flex align-items-center justify-content-center" style="width: 32px; height: 32px;" id="current-question">1</span>
+                        <span class="mx-2">/</span>
+                        <span>6</span>
+                    </div>
+                </div>
+                <div class="card-body p-4">
+                    <div class="progress mb-4" style="height: 8px;">
+                        <div class="progress-bar bg-primary" role="progressbar" style="width: 16.6%" aria-valuenow="16.6" aria-valuemin="0" aria-valuemax="100" id="quiz-progress"></div>
+                    </div>
+                    
+                    <!-- Question Container -->
+                    <div id="quiz-container">
+                        <!-- Question 1 -->
+                        <div class="quiz-question active" id="question-1">
+                            <h3 class="h5 fw-bold mb-4">How many times should each muscle group be trained per week for optimal growth?</h3>
+                            
+                            <div class="row g-3">
+                                <div class="col-md-6">
+                                    <div class="border rounded-3 p-3 quiz-option" data-option="A" data-correct="false">
+                                        <div class="d-flex align-items-center">
+                                            <div class="option-marker me-3">A</div>
+                                            <div>Once per week</div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-md-6">
+                                    <div class="border rounded-3 p-3 quiz-option" data-option="B" data-correct="true">
+                                        <div class="d-flex align-items-center">
+                                            <div class="option-marker me-3">B</div>
+                                            <div>2-3 times per week</div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-md-6">
+                                    <div class="border rounded-3 p-3 quiz-option" data-option="C" data-correct="false">
+                                        <div class="d-flex align-items-center">
+                                            <div class="option-marker me-3">C</div>
+                                            <div>Every day</div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-md-6">
+                                    <div class="border rounded-3 p-3 quiz-option" data-option="D" data-correct="false">
+                                        <div class="d-flex align-items-center">
+                                            <div class="option-marker me-3">D</div>
+                                            <div>Only when not sore</div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            <div class="feedback-container mt-4"></div>
+                        </div>
+                        
+                        <!-- Question 2 -->
+                        <div class="quiz-question" id="question-2">
+                            <h3 class="h5 fw-bold mb-4">How long does it typically take for a muscle group to fully recover after training?</h3>
+                            
+                            <div class="row g-3">
+                                <div class="col-md-6">
+                                    <div class="border rounded-3 p-3 quiz-option" data-option="A" data-correct="false">
+                                        <div class="d-flex align-items-center">
+                                            <div class="option-marker me-3">A</div>
+                                            <div>12-24 hours</div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-md-6">
+                                    <div class="border rounded-3 p-3 quiz-option" data-option="B" data-correct="false">
+                                        <div class="d-flex align-items-center">
+                                            <div class="option-marker me-3">B</div>
+                                            <div>1 week</div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-md-6">
+                                    <div class="border rounded-3 p-3 quiz-option" data-option="C" data-correct="true">
+                                        <div class="d-flex align-items-center">
+                                            <div class="option-marker me-3">C</div>
+                                            <div>48-72 hours</div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-md-6">
+                                    <div class="border rounded-3 p-3 quiz-option" data-option="D" data-correct="false">
+                                        <div class="d-flex align-items-center">
+                                            <div class="option-marker me-3">D</div>
+                                            <div>Only when soreness is gone</div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            <div class="feedback-container mt-4"></div>
+                        </div>
+                        
+                        <!-- Question 3 -->
+                        <div class="quiz-question" id="question-3">
+                            <h3 class="h5 fw-bold mb-4">Which split is typically best for beginners?</h3>
+                            
+                            <div class="row g-3">
+                                <div class="col-md-6">
+                                    <div class="border rounded-3 p-3 quiz-option" data-option="A" data-correct="true">
+                                        <div class="d-flex align-items-center">
+                                            <div class="option-marker me-3">A</div>
+                                            <div>Full Body Split</div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-md-6">
+                                    <div class="border rounded-3 p-3 quiz-option" data-option="B" data-correct="false">
+                                        <div class="d-flex align-items-center">
+                                            <div class="option-marker me-3">B</div>
+                                            <div>Push/Pull/Legs</div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-md-6">
+                                    <div class="border rounded-3 p-3 quiz-option" data-option="C" data-correct="false">
+                                        <div class="d-flex align-items-center">
+                                            <div class="option-marker me-3">C</div>
+                                            <div>Body Part Split</div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-md-6">
+                                    <div class="border rounded-3 p-3 quiz-option" data-option="D" data-correct="false">
+                                        <div class="d-flex align-items-center">
+                                            <div class="option-marker me-3">D</div>
+                                            <div>Bro Split</div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            <div class="feedback-container mt-4"></div>
+                        </div>
+                        
+                        <!-- Question 4 (New) -->
+                        <div class="quiz-question" id="question-4">
+                            <h3 class="h5 fw-bold mb-4">What is the primary benefit of an Upper/Lower split compared to a Body Part split?</h3>
+                            
+                            <div class="row g-3">
+                                <div class="col-md-6">
+                                    <div class="border rounded-3 p-3 quiz-option" data-option="A" data-correct="false">
+                                        <div class="d-flex align-items-center">
+                                            <div class="option-marker me-3">A</div>
+                                            <div>It's easier to remember</div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-md-6">
+                                    <div class="border rounded-3 p-3 quiz-option" data-option="B" data-correct="true">
+                                        <div class="d-flex align-items-center">
+                                            <div class="option-marker me-3">B</div>
+                                            <div>Higher training frequency per muscle group</div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-md-6">
+                                    <div class="border rounded-3 p-3 quiz-option" data-option="C" data-correct="false">
+                                        <div class="d-flex align-items-center">
+                                            <div class="option-marker me-3">C</div>
+                                            <div>Less total gym time</div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-md-6">
+                                    <div class="border rounded-3 p-3 quiz-option" data-option="D" data-correct="false">
+                                        <div class="d-flex align-items-center">
+                                            <div class="option-marker me-3">D</div>
+                                            <div>More isolation exercises</div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            <div class="feedback-container mt-4"></div>
+                        </div>
+                        
+                        <!-- Question 5 (New) -->
+                        <div class="quiz-question" id="question-5">
+                            <h3 class="h5 fw-bold mb-4">Which of the following is NOT a sign of overtraining?</h3>
+                            
+                            <div class="row g-3">
+                                <div class="col-md-6">
+                                    <div class="border rounded-3 p-3 quiz-option" data-option="A" data-correct="false">
+                                        <div class="d-flex align-items-center">
+                                            <div class="option-marker me-3">A</div>
+                                            <div>Decreased performance</div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-md-6">
+                                    <div class="border rounded-3 p-3 quiz-option" data-option="B" data-correct="false">
+                                        <div class="d-flex align-items-center">
+                                            <div class="option-marker me-3">B</div>
+                                            <div>Chronic fatigue</div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-md-6">
+                                    <div class="border rounded-3 p-3 quiz-option" data-option="C" data-correct="true">
+                                        <div class="d-flex align-items-center">
+                                            <div class="option-marker me-3">C</div>
+                                            <div>Muscle soreness for 1-2 days</div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-md-6">
+                                    <div class="border rounded-3 p-3 quiz-option" data-option="D" data-correct="false">
+                                        <div class="d-flex align-items-center">
+                                            <div class="option-marker me-3">D</div>
+                                            <div>Elevated resting heart rate</div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            <div class="feedback-container mt-4"></div>
+                        </div>
+                        
+                        <!-- Question 6 (New) -->
+                        <div class="quiz-question" id="question-6">
+                            <h3 class="h5 fw-bold mb-4">What is the recommended protein intake for strength training individuals?</h3>
+                            
+                            <div class="row g-3">
+                                <div class="col-md-6">
+                                    <div class="border rounded-3 p-3 quiz-option" data-option="A" data-correct="false">
+                                        <div class="d-flex align-items-center">
+                                            <div class="option-marker me-3">A</div>
+                                            <div>0.5-0.7g per pound of bodyweight</div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-md-6">
+                                    <div class="border rounded-3 p-3 quiz-option" data-option="B" data-correct="true">
+                                        <div class="d-flex align-items-center">
+                                            <div class="option-marker me-3">B</div>
+                                            <div>0.8-1.0g per pound of bodyweight</div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-md-6">
+                                    <div class="border rounded-3 p-3 quiz-option" data-option="C" data-correct="false">
+                                        <div class="d-flex align-items-center">
+                                            <div class="option-marker me-3">C</div>
+                                            <div>1.5-2.0g per pound of bodyweight</div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-md-6">
+                                    <div class="border rounded-3 p-3 quiz-option" data-option="D" data-correct="false">
+                                        <div class="d-flex align-items-center">
+                                            <div class="option-marker me-3">D</div>
+                                            <div>As much as possible</div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            <div class="feedback-container mt-4"></div>
+                        </div>
+                        
+                        <!-- Quiz Complete -->
+                        <div class="quiz-question" id="quiz-complete">
+                            <div class="text-center py-4">
+                                <div class="display-1 text-success mb-4">
+                                    <i class="bi bi-trophy-fill"></i>
+                                </div>
+                                <h3 class="h4 fw-bold mb-3">Quiz Complete!</h3>
+                                <p class="lead mb-4">You've completed the strength training essentials quiz.</p>
+                                <div class="score-display mb-4">
+                                    <div class="h2 fw-bold text-primary" id="final-score">Score: 0/6</div>
+                                </div>
+                                <a href="/exercises" class="btn btn-primary me-2">
+                                    <i class="bi bi-book me-2"></i> Review Material
+                                </a>
+                                <button class="btn btn-outline-primary" id="restart-quiz">
+                                    <i class="bi bi-arrow-repeat me-2"></i> Restart Quiz
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="d-flex justify-content-between mt-4">
+                        <button class="btn btn-outline-secondary" id="prev-question-btn" disabled>
+                            <i class="bi bi-arrow-left me-2"></i> Previous
+                        </button>
+                        <button class="btn btn-primary" id="next-question-btn" disabled>
+                            Next <i class="bi bi-arrow-right ms-2"></i>
+                        </button>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="text-center">
+                <p class="text-muted mb-3">Want to learn more before taking the quiz?</p>
+                <a href="/exercises" class="btn btn-outline-primary">Return to Learning Materials</a>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}
+
+{% block styles %}
+<style>
+    /* Quiz Styles */
+    .quiz-question {
+        display: none;
+    }
+
+    .quiz-question.active {
+        display: block;
+    }
+
+    .option-marker {
+        width: 30px;
+        height: 30px;
+        border-radius: 50%;
+        background-color: #f8f9fa;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-weight: 600;
+    }
+
+    .quiz-option {
+        cursor: pointer;
+        transition: all 0.2s ease;
+    }
+
+    .quiz-option:hover {
+        background-color: #f8f9fa;
+    }
+
+    .quiz-option.selected {
+        border-color: #4361ee !important;
+    }
+
+    .quiz-option.selected .option-marker {
+        background-color: #4361ee;
+        color: white;
+    }
+
+    .quiz-option.correct {
+        border-color: #198754 !important;
+        background-color: rgba(25, 135, 84, 0.1);
+    }
+
+    .quiz-option.correct .option-marker {
+        background-color: #198754;
+        color: white;
+    }
+
+    .quiz-option.incorrect {
+        border-color: #dc3545 !important;
+        background-color: rgba(220, 53, 69, 0.1);
+    }
+
+    .quiz-option.incorrect .option-marker {
+        background-color: #dc3545;
+        color: white;
+    }
+
+    /* Feedback Styles */
+    .feedback-container {
+        display: none;
+    }
+
+    .feedback-container.active {
+        display: block;
+    }
+
+    /* Quiz Complete Styles */
+    #quiz-complete {
+        display: none;
+    }
+
+    .score-display {
+        padding: 20px;
+        border-radius: 8px;
+        background-color: #f8f9fa;
+    }
+
+    /* Animation */
+    @keyframes fadeIn {
+        from { opacity: 0; }
+        to { opacity: 1; }
+    }
+
+    .quiz-question {
+        animation: fadeIn 0.5s ease;
+    }
+</style>
+{% endblock %}
+
+{% block scripts %}
+<script>
+    document.addEventListener('DOMContentLoaded', function() {
+        // Quiz variables
+        const quizQuestions = document.querySelectorAll('.quiz-question');
+        const totalQuestions = 6;
+        let currentQuestionIndex = 0;
+        let score = 0;
+        let answeredQuestions = [];
+        
+        // Quiz data
+        const quizData = [
+            {
+                correctFeedback: "Research shows training muscle groups 2-3 times per week leads to better growth than once per week with the same total volume.",
+                incorrectFeedback: "The optimal frequency is 2-3 times per week for most muscle groups. This provides the best balance of stimulus and recovery."
+            },
+            {
+                correctFeedback: "Most muscle groups need 48-72 hours to fully recover, though larger muscle groups like legs may need slightly longer.",
+                incorrectFeedback: "Most muscle groups need 48-72 hours to fully recover. Soreness is not a reliable indicator of recovery status."
+            },
+            {
+                correctFeedback: "Full body workouts are ideal for beginners as they provide frequent practice of movement patterns and optimal recovery.",
+                incorrectFeedback: "Full body workouts are best for beginners as they allow for frequent practice of movement patterns and provide optimal recovery."
+            },
+            {
+                correctFeedback: "Upper/Lower splits allow you to train each muscle group twice per week, which is optimal for most people. Body part splits typically only hit each muscle once per week.",
+                incorrectFeedback: "The main advantage of Upper/Lower splits is the increased training frequency for each muscle group, typically twice per week versus once per week with body part splits."
+            },
+            {
+                correctFeedback: "Mild muscle soreness for 1-2 days is a normal response to training. The other options are potential signs of overtraining.",
+                incorrectFeedback: "Mild muscle soreness for 1-2 days is a normal response to training and not a sign of overtraining. Decreased performance, chronic fatigue, and elevated resting heart rate can indicate overtraining."
+            },
+            {
+                correctFeedback: "Research suggests 0.8-1.0g of protein per pound of bodyweight is optimal for most strength training individuals. Higher amounts show diminishing returns.",
+                incorrectFeedback: "The recommended protein intake for strength training is 0.8-1.0g per pound of bodyweight. Higher amounts don't necessarily provide additional benefits for most people."
+            }
+        ];
+        
+        // UI elements
+        const prevButton = document.getElementById('prev-question-btn');
+        const nextButton = document.getElementById('next-question-btn');
+        const progressBar = document.getElementById('quiz-progress');
+        const currentQuestionDisplay = document.getElementById('current-question');
+        const finalScoreDisplay = document.getElementById('final-score');
+        const restartButton = document.getElementById('restart-quiz');
+        
+        // Initialize quiz
+        function initQuiz() {
+            // Set up option click handlers for all questions
+            document.querySelectorAll('.quiz-option').forEach(option => {
+                option.addEventListener('click', handleOptionClick);
+            });
+            
+            // Set up navigation buttons
+            prevButton.addEventListener('click', goToPreviousQuestion);
+            nextButton.addEventListener('click', goToNextQuestion);
+            
+            // Set up restart button
+            restartButton.addEventListener('click', restartQuiz);
+            
+            // Show first question
+            showQuestion(0);
+        }
+        
+        // Handle option click
+        function handleOptionClick() {
+            // Get current question
+            const currentQuestion = document.getElementById(`question-${currentQuestionIndex + 1}`);
+            if (!currentQuestion) return;
+            
+            // If already answered, do nothing
+            if (answeredQuestions.includes(currentQuestionIndex)) return;
+            
+            // Get all options for this question
+            const options = currentQuestion.querySelectorAll('.quiz-option');
+            
+            // Add selected class to clicked option
+            options.forEach(opt => {
+                opt.classList.remove('selected');
+            });
+            this.classList.add('selected');
+            
+            // Check if answer is correct
+            const isCorrect = this.getAttribute('data-correct') === 'true';
+            
+            // Mark option as correct or incorrect
+            if (isCorrect) {
+                this.classList.add('correct');
+            } else {
+                this.classList.add('incorrect');
+                
+                // Find and highlight correct answer
+                options.forEach(opt => {
+                    if (opt.getAttribute('data-correct') === 'true') {
+                        opt.classList.add('correct');
+                    }
+                });
+            }
+            
+            // Show feedback
+            const feedbackContainer = currentQuestion.querySelector('.feedback-container');
+            feedbackContainer.classList.add('active');
+            
+            // Create feedback message
+            const feedbackMessage = document.createElement('div');
+            feedbackMessage.className = isCorrect ? 'alert alert-success' : 'alert alert-danger';
+            
+            const feedbackIcon = document.createElement('i');
+            feedbackIcon.className = isCorrect ? 'bi bi-check-circle-fill me-2' : 'bi bi-x-circle-fill me-2';
+            
+            const feedbackTitle = document.createElement('strong');
+            feedbackTitle.textContent = isCorrect ? 'Correct! ' : 'Incorrect. ';
+            
+            const feedbackText = document.createElement('span');
+            feedbackText.textContent = isCorrect 
+                ? quizData[currentQuestionIndex].correctFeedback 
+                : quizData[currentQuestionIndex].incorrectFeedback;
+            
+            feedbackMessage.appendChild(feedbackIcon);
+            feedbackMessage.appendChild(feedbackTitle);
+            feedbackMessage.appendChild(feedbackText);
+            
+            feedbackContainer.innerHTML = '';
+            feedbackContainer.appendChild(feedbackMessage);
+            
+            // Record answer
+            answeredQuestions.push(currentQuestionIndex);
+            if (isCorrect) score++;
+            
+            // Enable next button
+            nextButton.disabled = false;
+        }
+        
+        // Show a specific question
+        function showQuestion(index) {
+            // Hide all questions
+            quizQuestions.forEach(question => {
+                question.classList.remove('active');
+            });
+            
+            // Show the current question or completion screen
+            if (index < totalQuestions) {
+                const currentQuestion = document.getElementById(`question-${index + 1}`);
+                currentQuestion.classList.add('active');
+                
+                // Update progress
+                const progress = ((index + 1) / totalQuestions) * 100;
+                progressBar.style.width = `${progress}%`;
+                progressBar.setAttribute('aria-valuenow', progress);
+                
+                // Update question number display
+                currentQuestionDisplay.textContent = index + 1;
+                
+                // Update button states
+                prevButton.disabled = index === 0;
+                
+                if (answeredQuestions.includes(index)) {
+                    nextButton.disabled = false;
+                } else {
+                    nextButton.disabled = true;
+                }
+            } else {
+                // Show completion screen
+                document.getElementById('quiz-complete').style.display = 'block';
+                finalScoreDisplay.textContent = `Score: ${score}/${totalQuestions}`;
+                
+                // Hide navigation buttons
+                prevButton.style.display = 'none';
+                nextButton.style.display = 'none';
+            }
+        }
+        
+        // Go to next question
+        function goToNextQuestion() {
+            if (currentQuestionIndex < totalQuestions) {
+                currentQuestionIndex++;
+                showQuestion(currentQuestionIndex);
+            }
+        }
+        
+        // Go to previous question
+        function goToPreviousQuestion() {
+            if (currentQuestionIndex > 0) {
+                currentQuestionIndex--;
+                showQuestion(currentQuestionIndex);
+            }
+        }
+        
+        // Restart quiz
+        function restartQuiz() {
+            // Reset variables
+            currentQuestionIndex = 0;
+            score = 0;
+            answeredQuestions = [];
+            
+            // Reset UI
+            document.querySelectorAll('.quiz-option').forEach(option => {
+                option.classList.remove('selected', 'correct', 'incorrect');
+            });
+            
+            document.querySelectorAll('.feedback-container').forEach(container => {
+                container.classList.remove('active');
+                container.innerHTML = '';
+            });
+            
+            document.getElementById('quiz-complete').style.display = 'none';
+            
+            // Show navigation buttons
+            prevButton.style.display = 'block';
+            nextButton.style.display = 'block';
+            
+            // Show first question
+            showQuestion(0);
+        }
+        
+        // Initialize the quiz
+        initQuiz();
+    });
+</script>
+{% endblock %}

@@ -1,0 +1,858 @@
+/* Visual Learning Styles for StrengthWise */
+
+/* Volume & Frequency Section */
+.volume-chart {
+    margin: 2rem 0;
+}
+
+.volume-bars {
+    display: flex;
+    justify-content: space-around;
+    align-items: flex-end;
+    height: 200px;
+    margin-bottom: 1rem;
+}
+
+.volume-bar-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100px;
+}
+
+.volume-label {
+    margin-bottom: 0.5rem;
+    font-weight: 600;
+}
+
+.volume-bar {
+    width: 60px;
+    height: 150px;
+    background-color: #f8f9fa;
+    border: 1px solid #dee2e6;
+    border-radius: 4px;
+    position: relative;
+}
+
+.volume-fill {
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    background: linear-gradient(to top, #4361ee, #4895ef);
+    border-radius: 0 0 4px 4px;
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    padding-top: 5px;
+}
+
+.volume-value {
+    color: white;
+    font-weight: 600;
+    font-size: 0.875rem;
+}
+
+.volume-legend {
+    display: flex;
+    justify-content: center;
+    margin-top: 1rem;
+}
+
+.legend-item {
+    display: flex;
+    align-items: center;
+    margin: 0 1rem;
+}
+
+.legend-color {
+    width: 20px;
+    height: 10px;
+    background: linear-gradient(to right, #4361ee, #4895ef);
+    margin-right: 0.5rem;
+}
+
+.legend-color.protein {
+    background: linear-gradient(to right, #4361ee, #4895ef);
+}
+
+.legend-color.soreness {
+    background: linear-gradient(to right, #f72585, #ff758f);
+}
+
+/* Frequency Selector */
+.frequency-visual {
+    margin: 2rem 0;
+}
+
+.frequency-options {
+    display: flex;
+    justify-content: space-around;
+    margin-bottom: 1.5rem;
+}
+
+.frequency-option {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    cursor: pointer;
+    transition: transform 0.2s;
+    padding: 1rem;
+    border-radius: 8px;
+}
+
+.frequency-option:hover {
+    transform: translateY(-5px);
+    background-color: rgba(67, 97, 238, 0.05);
+}
+
+.frequency-option.active {
+    background-color: rgba(67, 97, 238, 0.1);
+    border: 1px solid rgba(67, 97, 238, 0.3);
+}
+
+.frequency-circle {
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    background-color: #4361ee;
+    color: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 1.25rem;
+    font-weight: 700;
+    margin-bottom: 0.75rem;
+}
+
+.frequency-label {
+    font-weight: 500;
+    text-align: center;
+}
+
+/* Growth Factors */
+.factors-container {
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    margin: 2rem 0;
+}
+
+.factor-card {
+    width: 180px;
+    padding: 1.5rem 1rem;
+    border-radius: 8px;
+    background-color: white;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
+    text-align: center;
+    transition: transform 0.3s;
+}
+
+.factor-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 15px rgba(0, 0, 0, 0.1);
+}
+
+.factor-icon {
+    font-size: 2rem;
+    color: #4361ee;
+    margin-bottom: 1rem;
+}
+
+.factor-card h6 {
+    margin-bottom: 0.75rem;
+    font-weight: 600;
+}
+
+.factor-card p {
+    font-size: 0.875rem;
+    color: #6c757d;
+    margin-bottom: 0;
+}
+
+/* Enhanced Recovery Timeline - FIXED */
+.timeline-container {
+    position: relative;
+    margin: 2rem 0;
+    padding: 1rem;
+    background-color: #f8f9fa;
+    border-radius: 10px;
+}
+
+.timeline-tabs {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 1.5rem;
+    border-bottom: 2px solid #dee2e6;
+}
+
+.timeline-tab {
+    padding: 0.75rem 1rem;
+    background: none;
+    border: none;
+    border-bottom: 3px solid transparent;
+    font-weight: 500;
+    color: #6c757d;
+    cursor: pointer;
+    transition: all 0.3s;
+}
+
+.timeline-tab.active {
+    color: #4361ee;
+    border-bottom-color: #4361ee;
+}
+
+.timeline-visual {
+    position: relative;
+    height: 150px;
+    margin-bottom: 2rem;
+}
+
+.timeline-track {
+    position: absolute;
+    top: 50%;
+    left: 0;
+    width: 100%;
+    height: 4px;
+    background-color: #dee2e6;
+    transform: translateY(-50%);
+    z-index: 1;
+}
+
+.timeline-marker {
+    position: absolute;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 3;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    transition: transform 0.3s ease;
+}
+
+.marker-point {
+    width: 16px;
+    height: 16px;
+    border-radius: 50%;
+    margin-bottom: 0.5rem;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.marker-point.workout {
+    background-color: #4361ee;
+}
+
+.marker-point.synthesis {
+    background-color: #f72585;
+}
+
+.marker-point.peak {
+    background-color: #ffa62b;
+}
+
+.marker-point.complete {
+    background-color: #4cc9f0;
+}
+
+.marker-label {
+    font-size: 0.75rem;
+    font-weight: 500;
+    text-align: center;
+    white-space: nowrap;
+    color: #495057;
+    position: absolute;
+    top: 20px;
+    width: 80px;
+}
+
+/* Highlighted Timeline Markers */
+.highlight-marker {
+    transition: all 0.3s ease;
+}
+
+.highlight-marker.active .marker-point {
+    transform: scale(1.5);
+    box-shadow: 0 0 10px rgba(67, 97, 238, 0.7);
+}
+
+.timeline-tab.active + .timeline-visual .highlight-marker[id="synthesis-marker"],
+.timeline-tab[data-phase="protein-synthesis"].active ~ .timeline-visual .highlight-marker[id="synthesis-marker"] {
+    transform: translateY(-10px);
+}
+
+.timeline-tab[data-phase="peak-synthesis"].active ~ .timeline-visual .highlight-marker[id="peak-marker"] {
+    transform: translateY(-10px);
+}
+
+.timeline-tab[data-phase="recovery-complete"].active ~ .timeline-visual .highlight-marker[id="complete-marker"] {
+    transform: translateY(-10px);
+}
+
+.phase-info-container {
+    margin-bottom: 1.5rem;
+}
+
+.phase-info {
+    display: none;
+    padding: 1rem;
+    background-color: white;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+}
+
+.phase-info.active {
+    display: block;
+    animation: fadeIn 0.5s;
+}
+
+.timeline-legend {
+    display: flex;
+    justify-content: center;
+}
+
+/* Recovery Factors */
+.factors-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 1.5rem;
+    margin: 2rem 0;
+}
+
+.recovery-factor-card {
+    padding: 1.5rem;
+    border-radius: 8px;
+    background-color: white;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
+    text-align: center;
+    transition: transform 0.3s;
+}
+
+.recovery-factor-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 15px rgba(0, 0, 0, 0.1);
+}
+
+.factor-meter {
+    height: 8px;
+    background-color: #e9ecef;
+    border-radius: 4px;
+    margin: 1rem 0;
+    overflow: hidden;
+}
+
+.meter-fill {
+    height: 100%;
+    background: linear-gradient(to right, #4361ee, #4895ef);
+    border-radius: 4px;
+}
+
+/* Enhanced Muscle Map */
+.muscle-map-container {
+    display: flex;
+    margin: 2rem 0;
+    background-color: #f8f9fa;
+    border-radius: 10px;
+    overflow: hidden;
+}
+
+.muscle-map {
+    flex: 1;
+    padding: 1.5rem;
+    text-align: center;
+    position: relative;
+}
+
+.human-figure {
+    max-width: 200px;
+    height: auto;
+}
+
+.body-part {
+    fill: #e9ecef;
+    stroke: #adb5bd;
+    stroke-width: 1;
+    transition: all 0.3s;
+    cursor: pointer;
+}
+
+.body-part:hover {
+    fill: rgba(67, 97, 238, 0.7);
+    stroke: #3a56d4;
+}
+
+.body-part.active {
+    fill: #4361ee;
+    stroke: #3a56d4;
+}
+
+.body-part.back-view {
+    display: none;
+}
+
+.body-part.non-interactive {
+    fill: #e9ecef;
+    stroke: #adb5bd;
+    stroke-width: 1;
+    cursor: default;
+    pointer-events: none;
+}
+
+.rotate-button {
+    cursor: pointer;
+    transition: transform 0.3s;
+}
+
+.rotate-button:hover {
+    transform: scale(1.1);
+}
+
+.muscle-info-panel {
+    flex: 1;
+    padding: 1.5rem;
+    background-color: white;
+    border-left: 1px solid #dee2e6;
+}
+
+.info-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 1rem;
+    padding-bottom: 0.75rem;
+    border-bottom: 1px solid #dee2e6;
+}
+
+.recovery-badge {
+    padding: 0.25rem 0.75rem;
+    background-color: #4361ee;
+    color: white;
+    border-radius: 20px;
+    font-size: 0.875rem;
+    font-weight: 500;
+}
+
+.recovery-factors {
+    margin: 1.5rem 0;
+}
+
+.factor {
+    margin-bottom: 0.75rem;
+}
+
+.factor-meter {
+    height: 8px;
+    background-color: #e9ecef;
+    border-radius: 4px;
+    margin-top: 0.25rem;
+    overflow: hidden;
+}
+
+.factor-fill {
+    height: 100%;
+    background: linear-gradient(to right, #4361ee, #4895ef);
+    border-radius: 4px;
+    width: 0;
+    transition: width 1s;
+}
+
+/* Split Type Cards */
+.split-type-card {
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    cursor: pointer;
+}
+
+.split-type-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+}
+
+.split-type-card.active {
+    border-color: #4361ee;
+    box-shadow: 0 5px 15px rgba(67, 97, 238, 0.3);
+}
+
+.split-features {
+    list-style-type: none;
+    padding-left: 0;
+}
+
+.split-features li {
+    padding: 0.5rem 0;
+    border-bottom: 1px solid #e9ecef;
+}
+
+.split-features li:last-child {
+    border-bottom: none;
+}
+
+/* Weekly Calendar */
+.weekly-calendar {
+    margin: 3rem 0;
+}
+
+.calendar-container {
+    position: relative;
+    overflow: hidden;
+}
+
+.day-headers {
+    display: grid;
+    grid-template-columns: repeat(7, 1fr);
+    gap: 4px;
+    margin-bottom: 4px;
+}
+
+.day-header {
+    padding: 0.5rem;
+    text-align: center;
+    font-weight: 600;
+    background-color: #f8f9fa;
+    border-radius: 4px;
+}
+
+.split-calendar {
+    display: none;
+    grid-template-columns: repeat(7, 1fr);
+    gap: 4px;
+}
+
+.split-calendar.active {
+    display: grid;
+    animation: fadeIn 0.5s;
+}
+
+.workout-cell {
+    padding: 1rem 0.5rem;
+    text-align: center;
+    color: white;
+    font-weight: 500;
+    border-radius: 4px;
+    transition: transform 0.3s;
+}
+
+.workout-cell:hover {
+    transform: translateY(-5px);
+}
+
+.split-builder {
+    margin: 3rem 0;
+    padding: 1.5rem;
+    background-color: #f8f9fa;
+    border-radius: 10px;
+}
+
+.builder-container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 2rem;
+}
+
+.builder-options {
+    flex: 1;
+    min-width: 300px;
+}
+
+.option-group {
+    margin-bottom: 1.5rem;
+}
+
+.option-group label {
+    display: block;
+    margin-bottom: 0.5rem;
+    font-weight: 500;
+}
+
+.days-selector, .level-selector, .goal-selector {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+}
+
+.day-btn, .level-btn, .goal-btn {
+    padding: 0.5rem 1rem;
+    background-color: white;
+    border: 1px solid #dee2e6;
+    border-radius: 20px;
+    font-weight: 500;
+    cursor: pointer;
+    transition: all 0.2s;
+}
+
+.day-btn {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.day-btn:hover, .day-btn.active,
+.level-btn:hover, .level-btn.active,
+.goal-btn:hover, .goal-btn.active {
+    background-color: #4361ee;
+    color: white;
+    border-color: #4361ee;
+}
+
+.builder-result {
+    flex: 1;
+    min-width: 300px;
+    padding: 1.5rem;
+    background-color: white;
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
+}
+
+.result-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 1rem;
+    padding-bottom: 0.75rem;
+    border-bottom: 1px solid #dee2e6;
+}
+
+.recommendation-badge {
+    padding: 0.5rem 1rem;
+    background-color: #4361ee;
+    color: white;
+    border-radius: 20px;
+    font-weight: 500;
+}
+
+/* Do's and Don'ts */
+.dos-donts-container {
+    display: flex;
+    gap: 2rem;
+    margin: 2rem 0;
+}
+
+.dos-column, .donts-column {
+    flex: 1;
+    border-radius: 8px;
+    overflow: hidden;
+}
+
+.column-header {
+    display: flex;
+    align-items: center;
+    padding: 1rem;
+    color: white;
+}
+
+.dos-column .column-header {
+    background-color: #4cc9f0;
+}
+
+.donts-column .column-header {
+    background-color: #f72585;
+}
+
+.header-icon {
+    font-size: 1.5rem;
+    margin-right: 0.75rem;
+}
+
+.tip-list {
+    padding: 1rem;
+    background-color: #f8f9fa;
+    height: 100%;
+}
+
+.tip-item {
+    display: flex;
+    align-items: flex-start;
+    margin-bottom: 1rem;
+}
+
+.tip-icon {
+    margin-right: 0.75rem;
+    font-size: 1.25rem;
+}
+
+.dos-column .tip-icon {
+    color: #4cc9f0;
+}
+
+.donts-column .tip-icon {
+    color: #f72585;
+}
+
+/* Progress Tracking */
+.tracking-methods {
+    display: flex;
+    gap: 2rem;
+    margin: 2rem 0;
+}
+
+.tracking-method {
+    flex: 1;
+    padding: 1.5rem;
+    border-radius: 8px;
+    background-color: white;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
+    text-align: center;
+}
+
+.method-icon {
+    font-size: 2rem;
+    color: #4361ee;
+    margin-bottom: 1rem;
+}
+
+.method-visual {
+    margin-top: 1.5rem;
+}
+
+.log-entry {
+    display: flex;
+    justify-content: space-between;
+    padding: 0.5rem;
+    border-bottom: 1px solid #e9ecef;
+}
+
+.log-date {
+    font-weight: 600;
+}
+
+.photo-timeline {
+    display: flex;
+    justify-content: space-between;
+}
+
+.timeline-photo {
+    width: 60px;
+    height: 80px;
+    background-color: #f8f9fa;
+    border: 1px dashed #dee2e6;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 4px;
+}
+
+.photo-placeholder {
+    font-size: 0.75rem;
+    color: #6c757d;
+}
+
+/* Program Checklist */
+.checklist-container {
+    background-color: #f8f9fa;
+    border-radius: 8px;
+    padding: 1.5rem;
+    margin: 2rem 0;
+}
+
+.form-check {
+    margin-bottom: 0.75rem;
+}
+
+.form-check-input:checked {
+    background-color: #4361ee;
+    border-color: #4361ee;
+}
+
+.form-check-label {
+    font-weight: 500;
+}
+
+/* Animations */
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(10px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+/* Interaction Prompts */
+.interaction-prompt {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 1rem;
+    padding: 0.5rem;
+    background-color: rgba(67, 97, 238, 0.1);
+    border-radius: 8px;
+    border-left: 4px solid #4361ee;
+    animation: pulse 2s infinite;
+}
+
+.persistent-prompt {
+    animation: pulse 2s infinite;
+    transition: background-color 0.3s;
+}
+
+.persistent-prompt:hover {
+    background-color: rgba(67, 97, 238, 0.15);
+}
+
+.prompt-icon {
+    color: #4361ee;
+    font-size: 1.25rem;
+    margin-right: 0.5rem;
+}
+
+.prompt-text {
+    color: #495057;
+    font-weight: 500;
+}
+
+@keyframes pulse {
+    0% {
+        box-shadow: 0 0 0 0 rgba(67, 97, 238, 0.4);
+    }
+    70% {
+        box-shadow: 0 0 0 8px rgba(67, 97, 238, 0);
+    }
+    100% {
+        box-shadow: 0 0 0 0 rgba(67, 97, 238, 0);
+    }
+}
+
+/* Enhanced hover effects for interactive elements */
+.timeline-tab:hover {
+    background-color: rgba(67, 97, 238, 0.05);
+    color: #4361ee;
+}
+
+.split-card {
+    cursor: pointer;
+    transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.split-card:hover {
+    transform: translateY(-5px) scale(1.05);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+}
+
+/* Responsive Adjustments */
+@media (max-width: 768px) {
+    .dos-donts-container,
+    .tracking-methods,
+    .split-visual,
+    .muscle-map-container,
+    .builder-container {
+        flex-direction: column;
+    }
+    
+    .muscle-info-panel {
+        border-left: none;
+        border-top: 1px solid #dee2e6;
+    }
+    
+    .volume-bars {
+        flex-wrap: wrap;
+    }
+    
+    .volume-bar-container {
+        margin-bottom: 1.5rem;
+    }
+    
+    .factors-container {
+        gap: 1.5rem;
+    }
+    
+    .factor-card {
+        width: 100%;
+    }
+}
+

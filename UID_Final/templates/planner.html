@@ -1,0 +1,404 @@
+{% extends "layout.html" %}
+
+{% block title %}Workout Planner{% endblock %}
+
+{% block content %}
+<div class="container py-5">
+    <!-- Page Header -->
+    <div class="text-center mb-5">
+        <h1 class="display-5 fw-bold">Create Your <span class="text-primary">Workout Plan</span></h1>
+        <p class="lead">Design your personalized workout schedule with our visual planner</p>
+    </div>
+    
+    <div class="row">
+        <!-- Split Templates -->
+        <div class="col-lg-4 mb-4">
+            <h2 class="h4 fw-bold mb-4">Quick Start Templates</h2>
+            <p class="text-muted mb-4">Choose a template based on your availability:</p>
+            
+            <div class="d-flex flex-column gap-3">
+                <div class="card border hover-card">
+                    <div class="card-header d-flex justify-content-between align-items-center">
+                        <h3 class="h5 mb-0">Full Body</h3>
+                        <span class="badge bg-primary">3 days/week</span>
+                    </div>
+                    <div class="card-body">
+                        <div class="week-mini mb-3">
+                            <div class="day-mini full-body">M</div>
+                            <div class="day-mini rest">T</div>
+                            <div class="day-mini full-body">W</div>
+                            <div class="day-mini rest">T</div>
+                            <div class="day-mini full-body">F</div>
+                            <div class="day-mini rest">S</div>
+                            <div class="day-mini rest">S</div>
+                        </div>
+                        <p class="small text-muted mb-3"><strong>Best for:</strong> Beginners, limited time</p>
+                        <button class="btn btn-primary w-100 apply-template" data-template="full-body">Apply Template</button>
+                    </div>
+                </div>
+                
+                <div class="card border hover-card">
+                    <div class="card-header d-flex justify-content-between align-items-center">
+                        <h3 class="h5 mb-0">Upper/Lower</h3>
+                        <span class="badge bg-primary">4 days/week</span>
+                    </div>
+                    <div class="card-body">
+                        <div class="week-mini mb-3">
+                            <div class="day-mini upper">M</div>
+                            <div class="day-mini lower">T</div>
+                            <div class="day-mini rest">W</div>
+                            <div class="day-mini upper">T</div>
+                            <div class="day-mini lower">F</div>
+                            <div class="day-mini rest">S</div>
+                            <div class="day-mini rest">S</div>
+                        </div>
+                        <p class="small text-muted mb-3"><strong>Best for:</strong> Intermediate, balanced development</p>
+                        <button class="btn btn-primary w-100 apply-template" data-template="upper-lower">Apply Template</button>
+                    </div>
+                </div>
+                
+                <div class="card border hover-card">
+                    <div class="card-header d-flex justify-content-between align-items-center">
+                        <h3 class="h5 mb-0">Push/Pull/Legs</h3>
+                        <span class="badge bg-primary">6 days/week</span>
+                    </div>
+                    <div class="card-body">
+                        <div class="week-mini mb-3">
+                            <div class="day-mini push">M</div>
+                            <div class="day-mini pull">T</div>
+                            <div class="day-mini legs">W</div>
+                            <div class="day-mini push">T</div>
+                            <div class="day-mini pull">F</div>
+                            <div class="day-mini legs">S</div>
+                            <div class="day-mini rest">S</div>
+                        </div>
+                        <p class="small text-muted mb-3"><strong>Best for:</strong> Advanced, high volume training</p>
+                        <button class="btn btn-primary w-100 apply-template" data-template="ppl">Apply Template</button>
+                    </div>
+                </div>
+                
+                <button class="btn btn-outline-danger" id="clear-plan">
+                    <i class="bi bi-trash me-2"></i> Clear Plan
+                </button>
+            </div>
+        </div>
+        
+        <!-- Weekly Calendar -->
+        <div class="col-lg-8">
+            <h2 class="h4 fw-bold mb-4">Your Weekly Schedule</h2>
+            
+            <div class="card shadow-lg border-0 mb-4">
+                <div class="card-header bg-primary text-white">
+                    <h3 class="h5 mb-0">Weekly Calendar</h3>
+                </div>
+                <div class="card-body p-0">
+                    <div class="weekly-calendar">
+                        <div class="calendar-header">
+                            <div class="day-header">Mon</div>
+                            <div class="day-header">Tue</div>
+                            <div class="day-header">Wed</div>
+                            <div class="day-header">Thu</div>
+                            <div class="day-header">Fri</div>
+                            <div class="day-header">Sat</div>
+                            <div class="day-header">Sun</div>
+                        </div>
+                        <div class="calendar-body" id="planner-calendar">
+                            <div class="workout-slot">
+                                <div class="workout-card full-body">
+                                    <i class="bi bi-dumbbell mb-2"></i>
+                                    <span>Full Body</span>
+                                </div>
+                            </div>
+                            <div class="workout-slot">
+                                <div class="workout-card rest">
+                                    <i class="bi bi-battery-charging mb-2"></i>
+                                    <span>Rest</span>
+                                </div>
+                            </div>
+                            <div class="workout-slot">
+                                <div class="workout-card full-body">
+                                    <i class="bi bi-dumbbell mb-2"></i>
+                                    <span>Full Body</span>
+                                </div>
+                            </div>
+                            <div class="workout-slot">
+                                <div class="workout-card rest">
+                                    <i class="bi bi-battery-charging mb-2"></i>
+                                    <span>Rest</span>
+                                </div>
+                            </div>
+                            <div class="workout-slot">
+                                <div class="workout-card full-body">
+                                    <i class="bi bi-dumbbell mb-2"></i>
+                                    <span>Full Body</span>
+                                </div>
+                            </div>
+                            <div class="workout-slot">
+                                <div class="workout-card rest">
+                                    <i class="bi bi-battery-charging mb-2"></i>
+                                    <span>Rest</span>
+                                </div>
+                            </div>
+                            <div class="workout-slot">
+                                <div class="workout-card rest">
+                                    <i class="bi bi-battery-charging mb-2"></i>
+                                    <span>Rest</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Quick Analysis -->
+            <div class="card shadow-lg border-0 mb-4">
+                <div class="card-header bg-primary text-white">
+                    <h3 class="h5 mb-0">Plan Analysis</h3>
+                </div>
+                <div class="card-body">
+                    <div class="row g-3">
+                        <div class="col-md-3">
+                            <div class="bg-light rounded p-3 text-center">
+                                <div class="text-muted small mb-1">Training Days</div>
+                                <div class="h4 fw-bold text-primary mb-0" id="training-days">3/7</div>
+                            </div>
+                        </div>
+                        <div class="col-md-3">
+                            <div class="bg-light rounded p-3 text-center">
+                                <div class="text-muted small mb-1">Rest Days</div>
+                                <div class="h4 fw-bold text-primary mb-0" id="rest-days">4/7</div>
+                            </div>
+                        </div>
+                        <div class="col-md-3">
+                            <div class="bg-light rounded p-3 text-center">
+                                <div class="text-muted small mb-1">Muscle Frequency</div>
+                                <div class="h4 fw-bold text-primary mb-0" id="muscle-frequency">3x/week</div>
+                            </div>
+                        </div>
+                        <div class="col-md-3">
+                            <div class="bg-success bg-opacity-10 rounded p-3 text-center">
+                                <div class="text-muted small mb-1">Recovery</div>
+                                <div class="h4 fw-bold text-success mb-0" id="recovery-rating">Good</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="text-center">
+                <button class="btn btn-success btn-lg" id="save-plan">
+                    <i class="bi bi-save me-2"></i> Save My Plan
+                </button>
+            </div>
+        </div>
+    </div>
+    
+    <!-- Workout Types Legend -->
+    <div class="mt-5">
+        <h2 class="h4 fw-bold mb-4">Workout Types</h2>
+        <div class="row g-3">
+            <div class="col-md-3 col-6">
+                <div class="d-flex align-items-center">
+                    <div class="workout-type-box push me-2"></div>
+                    <span>Push: Chest, Shoulders, Triceps</span>
+                </div>
+            </div>
+            <div class="col-md-3 col-6">
+                <div class="d-flex align-items-center">
+                    <div class="workout-type-box pull me-2"></div>
+                    <span>Pull: Back, Biceps</span>
+                </div>
+            </div>
+            <div class="col-md-3 col-6">
+                <div class="d-flex align-items-center">
+                    <div class="workout-type-box legs me-2"></div>
+                    <span>Legs: Quads, Hamstrings, Calves</span>
+                </div>
+            </div>
+            <div class="col-md-3 col-6">
+                <div class="d-flex align-items-center">
+                    <div class="workout-type-box upper me-2"></div>
+                    <span>Upper: Chest, Back, Shoulders, Arms</span>
+                </div>
+            </div>
+            <div class="col-md-3 col-6">
+                <div class="d-flex align-items-center">
+                    <div class="workout-type-box lower me-2"></div>
+                    <span>Lower: Quads, Hamstrings, Calves</span>
+                </div>
+            </div>
+            <div class="col-md-3 col-6">
+                <div class="d-flex align-items-center">
+                    <div class="workout-type-box full-body me-2"></div>
+                    <span>Full Body: All Major Muscle Groups</span>
+                </div>
+            </div>
+            <div class="col-md-3 col-6">
+                <div class="d-flex align-items-center">
+                    <div class="workout-type-box rest me-2"></div>
+                    <span>Rest: Recovery Day</span>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}
+
+{% block scripts %}
+<script>
+    document.addEventListener('DOMContentLoaded', function() {
+        // Template buttons
+        const templateButtons = document.querySelectorAll('.apply-template');
+        const clearButton = document.getElementById('clear-plan');
+        const saveButton = document.getElementById('save-plan');
+        const plannerCalendar = document.getElementById('planner-calendar');
+        
+        // Apply template
+        templateButtons.forEach(button => {
+            button.addEventListener('click', function() {
+                const template = this.getAttribute('data-template');
+                applyTemplate(template);
+                updateAnalysis(template);
+            });
+        });
+        
+        // Clear plan
+        clearButton.addEventListener('click', function() {
+            clearPlan();
+        });
+        
+        // Save plan
+        saveButton.addEventListener('click', function() {
+            savePlan();
+        });
+        
+        // Apply template function
+        function applyTemplate(template) {
+            // Clear current plan
+            while (plannerCalendar.firstChild) {
+                plannerCalendar.removeChild(plannerCalendar.firstChild);
+            }
+            
+            // Apply selected template
+            if (template === 'full-body') {
+                const days = ['full-body', 'rest', 'full-body', 'rest', 'full-body', 'rest', 'rest'];
+                createCalendarCells(days);
+            } else if (template === 'upper-lower') {
+                const days = ['upper', 'lower', 'rest', 'upper', 'lower', 'rest', 'rest'];
+                createCalendarCells(days);
+            } else if (template === 'ppl') {
+                const days = ['push', 'pull', 'legs', 'push', 'pull', 'legs', 'rest'];
+                createCalendarCells(days);
+            }
+            
+            // Highlight selected template
+            document.querySelectorAll('.card.hover-card').forEach(card => {
+                card.classList.remove('border-primary');
+            });
+            
+            const selectedCard = document.querySelector(`[data-template="${template}"]`).closest('.card');
+            selectedCard.classList.add('border-primary');
+        }
+        
+        // Create calendar cells
+        function createCalendarCells(days) {
+            days.forEach(day => {
+                const slot = document.createElement('div');
+                slot.className = 'workout-slot';
+                
+                const card = document.createElement('div');
+                card.className = `workout-card ${day}`;
+                
+                const icon = document.createElement('i');
+                
+                if (day === 'rest') {
+                    icon.className = 'bi bi-battery-charging mb-2';
+                } else if (day === 'full-body') {
+                    icon.className = 'bi bi-dumbbell mb-2';
+                } else if (day === 'upper') {
+                    icon.className = 'bi bi-arrow-up mb-2';
+                } else if (day === 'lower') {
+                    icon.className = 'bi bi-arrow-down mb-2';
+                } else if (day === 'push') {
+                    icon.className = 'bi bi-arrow-right mb-2';
+                } else if (day === 'pull') {
+                    icon.className = 'bi bi-arrow-left mb-2';
+                } else if (day === 'legs') {
+                    icon.className = 'bi bi-lightning mb-2';
+                }
+                
+                const span = document.createElement('span');
+                span.textContent = day.charAt(0).toUpperCase() + day.slice(1);
+                
+                card.appendChild(icon);
+                card.appendChild(span);
+                slot.appendChild(card);
+                plannerCalendar.appendChild(slot);
+            });
+        }
+        
+        // Update analysis
+        function updateAnalysis(template) {
+            const trainingDays = document.getElementById('training-days');
+            const restDays = document.getElementById('rest-days');
+            const muscleFrequency = document.getElementById('muscle-frequency');
+            const recoveryRating = document.getElementById('recovery-rating');
+            
+            if (template === 'full-body') {
+                trainingDays.textContent = '3/7';
+                restDays.textContent = '4/7';
+                muscleFrequency.textContent = '3x/week';
+                recoveryRating.textContent = 'Good';
+                recoveryRating.className = 'h4 fw-bold text-success mb-0';
+            } else if (template === 'upper-lower') {
+                trainingDays.textContent = '4/7';
+                restDays.textContent = '3/7';
+                muscleFrequency.textContent = '2x/week';
+                recoveryRating.textContent = 'Good';
+                recoveryRating.className = 'h4 fw-bold text-success mb-0';
+            } else if (template === 'ppl') {
+                trainingDays.textContent = '6/7';
+                restDays.textContent = '1/7';
+                muscleFrequency.textContent = '2x/week';
+                recoveryRating.textContent = 'Moderate';
+                recoveryRating.className = 'h4 fw-bold text-warning mb-0';
+            }
+        }
+        
+        // Clear plan
+        function clearPlan() {
+            // Reset calendar
+            while (plannerCalendar.firstChild) {
+                plannerCalendar.removeChild(plannerCalendar.firstChild);
+            }
+            
+            // Add empty slots
+            for (let i = 0; i < 7; i++) {
+                const slot = document.createElement('div');
+                slot.className = 'workout-slot empty';
+                plannerCalendar.appendChild(slot);
+            }
+            
+            // Reset analysis
+            document.getElementById('training-days').textContent = '0/7';
+            document.getElementById('rest-days').textContent = '7/7';
+            document.getElementById('muscle-frequency').textContent = '0x/week';
+            document.getElementById('recovery-rating').textContent = 'N/A';
+            document.getElementById('recovery-rating').className = 'h4 fw-bold text-muted mb-0';
+            
+            // Reset template selection
+            document.querySelectorAll('.card.hover-card').forEach(card => {
+                card.classList.remove('border-primary');
+            });
+        }
+        
+        // Save plan
+        function savePlan() {
+            alert('Your workout plan has been saved! In a full implementation, this would save to your account.');
+        }
+        
+        // Initialize with full body template
+        applyTemplate('full-body');
+    });
+</script>
+{% endblock %}

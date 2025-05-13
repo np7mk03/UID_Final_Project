@@ -1,0 +1,455 @@
+{% extends "layout.html" %}
+
+{% block title %}Progress Tracking{% endblock %}
+
+{% block content %}
+<div class="progress-tracking-container">
+    <div class="container py-5">
+        <!-- Page Header -->
+        <div class="text-center mb-5">
+            <h1 class="display-4 fw-bold">Track Your <span class="text-primary">Progress</span></h1>
+            <p class="lead">Monitor your learning journey and workout development with visual tools.</p>
+        </div>
+
+        <div class="row">
+            <!-- Learning Progress -->
+            <div class="col-lg-6 mb-4">
+                <div class="card h-100">
+                    <div class="card-header bg-primary text-white">
+                        <h5 class="mb-0">Learning Progress</h5>
+                    </div>
+                    <div class="card-body">
+                        <div class="learning-progress">
+                            <div class="progress-overview mb-4">
+                                <div class="progress-circle-container">
+                                    <div class="progress-circle">
+                                        <svg viewBox="0 0 36 36" class="circular-chart">
+                                            <path class="circle-bg" d="M18 2.0845
+                                                a 15.9155 15.9155 0 0 1 0 31.831
+                                                a 15.9155 15.9155 0 0 1 0 -31.831" />
+                                            <path class="circle" id="progress-circle-path" stroke-dasharray="0, 100" d="M18 2.0845
+                                                a 15.9155 15.9155 0 0 1 0 31.831
+                                                a 15.9155 15.9155 0 0 1 0 -31.831" />
+                                            <text x="18" y="20.35" class="percentage" id="progress-percentage">0%</text>
+                                        </svg>
+                                    </div>
+                                </div>
+                                <div class="progress-stats">
+                                    <div class="stat-item">
+                                        <div class="stat-label">Completed Modules</div>
+                                        <div class="stat-value" id="completed-modules">0/6</div>
+                                    </div>
+                                    <div class="stat-item">
+                                        <div class="stat-label">Time Spent</div>
+                                        <div class="stat-value" id="time-spent">0 min</div>
+                                    </div>
+                                    <div class="stat-item">
+                                        <div class="stat-label">Last Activity</div>
+                                        <div class="stat-value" id="last-activity">Never</div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <h6 class="mb-3">Module Completion</h6>
+                            <div class="module-progress">
+                                <div class="module-item">
+                                    <div class="module-info">
+                                        <div class="module-name">What Do Muscles Need to Grow?</div>
+                                        <div class="module-status" id="module-1-status">Not started</div>
+                                    </div>
+                                    <div class="progress">
+                                        <div class="progress-bar" id="module-1-progress" role="progressbar" style="width: 0%" aria-valuenow="0" aria-valuemin="0" aria-valuemax="100"></div>
+                                    </div>
+                                </div>
+                                <div class="module-item">
+                                    <div class="module-info">
+                                        <div class="module-name">Training Frequency</div>
+                                        <div class="module-status" id="module-2-status">Not started</div>
+                                    </div>
+                                    <div class="progress">
+                                        <div class="progress-bar" id="module-2-progress" role="progressbar" style="width: 0%" aria-valuenow="0" aria-valuemin="0" aria-valuemax="100"></div>
+                                    </div>
+                                </div>
+                                <div class="module-item">
+                                    <div class="module-info">
+                                        <div class="module-name">Recovery and Rest</div>
+                                        <div class="module-status" id="module-3-status">Not started</div>
+                                    </div>
+                                    <div class="progress">
+                                        <div class="progress-bar" id="module-3-progress" role="progressbar" style="width: 0%" aria-valuenow="0" aria-valuemin="0" aria-valuemax="100"></div>
+                                    </div>
+                                </div>
+                                <div class="module-item">
+                                    <div class="module-info">
+                                        <div class="module-name">Workout Split Types</div>
+                                        <div class="module-status" id="module-4-status">Not started</div>
+                                    </div>
+                                    <div class="progress">
+                                        <div class="progress-bar" id="module-4-progress" role="progressbar" style="width: 0%" aria-valuenow="0" aria-valuemin="0" aria-valuemax="100"></div>
+                                    </div>
+                                </div>
+                                <div class="module-item">
+                                    <div class="module-info">
+                                        <div class="module-name">Matching Your Goals</div>
+                                        <div class="module-status" id="module-5-status">Not started</div>
+                                    </div>
+                                    <div class="progress">
+                                        <div class="progress-bar" id="module-5-progress" role="progressbar" style="width: 0%" aria-valuenow="0" aria-valuemin="0" aria-valuemax="100"></div>
+                                    </div>
+                                </div>
+                                <div class="module-item">
+                                    <div class="module-info">
+                                        <div class="module-name">Common Pitfalls</div>
+                                        <div class="module-status" id="module-6-status">Not started</div>
+                                    </div>
+                                    <div class="progress">
+                                        <div class="progress-bar" id="module-6-progress" role="progressbar" style="width: 0%" aria-valuenow="0" aria-valuemin="0" aria-valuemax="100"></div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="text-center mt-4">
+                                <a href="/exercises" class="btn btn-primary">Continue Learning</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Quiz Results -->
+            <div class="col-lg-6 mb-4">
+                <div class="card h-100">
+                    <div class="card-header bg-primary text-white">
+                        <h5 class="mb-0">Quiz Performance</h5>
+                    </div>
+                    <div class="card-body">
+                        <div class="quiz-performance">
+                            <div class="performance-overview mb-4">
+                                <div class="performance-chart">
+                                    <canvas id="quiz-chart" width="300" height="300"></canvas>
+                                </div>
+                                <div class="performance-stats">
+                                    <div class="stat-item">
+                                        <div class="stat-label">Quizzes Taken</div>
+                                        <div class="stat-value" id="quizzes-taken">0</div>
+                                    </div>
+                                    <div class="stat-item">
+                                        <div class="stat-label">Average Score</div>
+                                        <div class="stat-value" id="average-score">0%</div>
+                                    </div>
+                                    <div class="stat-item">
+                                        <div class="stat-label">Best Score</div>
+                                        <div class="stat-value" id="best-score">0%</div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <h6 class="mb-3">Recent Quiz Results</h6>
+                            <div class="quiz-results" id="quiz-results">
+                                <div class="empty-state">
+                                    <div class="empty-icon">
+                                        <i class="bi bi-clipboard-data"></i>
+                                    </div>
+                                    <div class="empty-text">No quiz results yet. Take a quiz to see your performance.</div>
+                                    <a href="/quiz" class="btn btn-outline-primary mt-3">Take a Quiz</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Workout Plan -->
+            <div class="col-12 mb-4">
+                <div class="card">
+                    <div class="card-header bg-primary text-white">
+                        <h5 class="mb-0">Your Workout Plan</h5>
+                    </div>
+                    <div class="card-body">
+                        <div class="workout-plan" id="workout-plan">
+                            <div class="empty-state" id="empty-workout-plan">
+                                <div class="empty-icon">
+                                    <i class="bi bi-calendar-plus"></i>
+                                </div>
+                                <div class="empty-text">You haven't created a workout plan yet.</div>
+                                <a href="/planner" class="btn btn-outline-primary mt-3">Create Workout Plan</a>
+                            </div>
+                            <div class="plan-display d-none" id="plan-display">
+                                <div class="plan-calendar">
+                                    <div class="calendar-header">
+                                        <div class="day-header">Monday</div>
+                                        <div class="day-header">Tuesday</div>
+                                        <div class="day-header">Wednesday</div>
+                                        <div class="day-header">Thursday</div>
+                                        <div class="day-header">Friday</div>
+                                        <div class="day-header">Saturday</div>
+                                        <div class="day-header">Sunday</div>
+                                    </div>
+                                    <div class="calendar-body" id="plan-calendar-body">
+                                        <!-- Will be populated by JavaScript -->
+                                    </div>
+                                </div>
+                                <div class="plan-actions text-center mt-4">
+                                    <a href="/planner" class="btn btn-primary">Edit Plan</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}
+
+{% block scripts %}
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+<script>
+    document.addEventListener('DOMContentLoaded', function() {
+        // Load progress data
+        loadProgressData();
+        
+        // Initialize charts
+        initializeCharts();
+        
+        // Load workout plan
+        loadWorkoutPlan();
+    });
+    
+    function loadProgressData() {
+        // In a real app, this would be an AJAX request to the server
+        // For now, we'll use localStorage
+        
+        // Learning progress
+        const completedSections = JSON.parse(localStorage.getItem('completedSections')) || [];
+        const totalModules = 6;
+        const completedModules = completedSections.length;
+        const progressPercentage = Math.round((completedModules / totalModules) * 100);
+        
+        // Update progress circle
+        document.getElementById('progress-circle-path').setAttribute('stroke-dasharray', `${progressPercentage}, 100`);
+        document.getElementById('progress-percentage').textContent = `${progressPercentage}%`;
+        document.getElementById('completed-modules').textContent = `${completedModules}/${totalModules}`;
+        
+        // Simulate time spent (in a real app, this would be tracked)
+        const timeSpent = completedModules * 10; // 10 minutes per module
+        document.getElementById('time-spent').textContent = `${timeSpent} min`;
+        
+        // Last activity
+        const lastActivity = completedModules > 0 ? 'Today' : 'Never';
+        document.getElementById('last-activity').textContent = lastActivity;
+        
+        // Module progress
+        const moduleNames = [
+            'what-do-muscles-need-to-grow',
+            'training-frequency',
+            'recovery-and-rest',
+            'workout-split-types',
+            'matching-your-goals',
+            'common-pitfalls'
+        ];
+        
+        moduleNames.forEach((moduleName, index) => {
+            const moduleNumber = index + 1;
+            const isCompleted = completedSections.includes(moduleName);
+            const progressBar = document.getElementById(`module-${moduleNumber}-progress`);
+            const statusElement = document.getElementById(`module-${moduleNumber}-status`);
+            
+            if (isCompleted) {
+                progressBar.style.width = '100%';
+                progressBar.setAttribute('aria-valuenow', 100);
+                statusElement.textContent = 'Completed';
+                statusElement.classList.add('text-success');
+            } else {
+                progressBar.style.width = '0%';
+                progressBar.setAttribute('aria-valuenow', 0);
+                statusElement.textContent = 'Not started';
+            }
+        });
+        
+        // Quiz results
+        const quizResults = JSON.parse(localStorage.getItem('quizResults')) || [];
+        const quizzesTaken = quizResults.length;
+        document.getElementById('quizzes-taken').textContent = quizzesTaken;
+        
+        if (quizzesTaken > 0) {
+            // Calculate average score
+            const totalScore = quizResults.reduce((sum, result) => sum + result.score, 0);
+            const averageScore = Math.round(totalScore / quizzesTaken);
+            document.getElementById('average-score').textContent = `${averageScore}%`;
+            
+            // Find best score
+            const bestScore = Math.max(...quizResults.map(result => result.score));
+            document.getElementById('best-score').textContent = `${bestScore}%`;
+            
+            // Display recent quiz results
+            const quizResultsContainer = document.getElementById('quiz-results');
+            quizResultsContainer.innerHTML = '';
+            
+            // Sort by date (most recent first)
+            quizResults.sort((a, b) => new Date(b.date) - new Date(a.date));
+            
+            // Display up to 3 most recent results
+            const recentResults = quizResults.slice(0, 3);
+            
+            recentResults.forEach(result => {
+                const date = new Date(result.date);
+                const formattedDate = date.toLocaleDateString();
+                
+                const resultHTML = `
+                    <div class="quiz-result-item">
+                        <div class="result-header">
+                            <div class="result-date">${formattedDate}</div>
+                            <div class="result-score ${result.score >= 70 ? 'text-success' : 'text-danger'}">${result.score}%</div>
+                        </div>
+                        <div class="result-details">
+                            <div class="result-stat">
+                                <div class="stat-label">Correct Answers</div>
+                                <div class="stat-value">${result.correctAnswers}/${result.totalQuestions}</div>
+                            </div>
+                        </div>
+                        <div class="result-progress">
+                            <div class="progress">
+                                <div class="progress-bar ${result.score >= 70 ? 'bg-success' : 'bg-danger'}" role="progressbar" style="width: ${result.score}%" aria-valuenow="${result.score}" aria-valuemin="0" aria-valuemax="100"></div>
+                            </div>
+                        </div>
+                    </div>
+                `;
+                
+                quizResultsContainer.innerHTML += resultHTML;
+            });
+        } else {
+            // Show empty state
+            const quizResultsContainer = document.getElementById('quiz-results');
+            quizResultsContainer.innerHTML = `
+                <div class="empty-state">
+                    <div class="empty-icon">
+                        <i class="bi bi-clipboard-data"></i>
+                    </div>
+                    <div class="empty-text">No quiz results yet. Take a quiz to see your performance.</div>
+                    <a href="/quiz" class="btn btn-outline-primary mt-3">Take a Quiz</a>
+                </div>
+            `;
+        }
+    }
+    
+    function initializeCharts() {
+        // Quiz performance chart
+        const quizResults = JSON.parse(localStorage.getItem('quizResults')) || [];
+        
+        if (quizResults.length > 0) {
+            const ctx = document.getElementById('quiz-chart').getContext('2d');
+            
+            // Sort by date (oldest first for the chart)
+            quizResults.sort((a, b) => new Date(a.date) - new Date(b.date));
+            
+            // Prepare data
+            const labels = quizResults.map((result, index) => `Quiz ${index + 1}`);
+            const scores = quizResults.map(result => result.score);
+            
+            const chart = new Chart(ctx, {
+                type: 'line',
+                data: {
+                    labels: labels,
+                    datasets: [{
+                        label: 'Quiz Score (%)',
+                        data: scores,
+                        backgroundColor: 'rgba(54, 162, 235, 0.2)',
+                        borderColor: 'rgba(54, 162, 235, 1)',
+                        borderWidth: 2,
+                        tension: 0.3,
+                        fill: true
+                    }]
+                },
+                options: {
+                    responsive: true,
+                    maintainAspectRatio: false,
+                    scales: {
+                        y: {
+                            beginAtZero: true,
+                            max: 100,
+                            ticks: {
+                                callback: function(value) {
+                                    return value + '%';
+                                }
+                            }
+                        }
+                    },
+                    plugins: {
+                        legend: {
+                            display: false
+                        },
+                        tooltip: {
+                            callbacks: {
+                                label: function(context) {
+                                    return `Score: ${context.raw}%`;
+                                }
+                            }
+                        }
+                    }
+                }
+            });
+        }
+    }
+    
+    function loadWorkoutPlan() {
+        // In a real app, this would be an AJAX request to the server
+        // For now, we'll use localStorage
+        const workoutPlan = JSON.parse(localStorage.getItem('workoutPlan'));
+        
+        if (workoutPlan && Object.keys(workoutPlan).length > 0) {
+            // Hide empty state
+            document.getElementById('empty-workout-plan').classList.add('d-none');
+            
+            // Show plan display
+            const planDisplay = document.getElementById('plan-display');
+            planDisplay.classList.remove('d-none');
+            
+            // Populate calendar
+            const calendarBody = document.getElementById('plan-calendar-body');
+            calendarBody.innerHTML = '';
+            
+            const days = ['monday', 'tuesday', 'wednesday', 'thursday', 'friday', 'saturday', 'sunday'];
+            
+            days.forEach(day => {
+                const dayColumn = document.createElement('div');
+                dayColumn.className = 'day-column';
+                
+                if (workoutPlan[day] && workoutPlan[day].length > 0) {
+                    workoutPlan[day].forEach(workout => {
+                        const workoutBlock = document.createElement('div');
+                        workoutBlock.className = `workout-block ${workout.type}`;
+                        
+                        let icon = '';
+                        switch (workout.type) {
+                            case 'push': icon = '<i class="bi bi-box-arrow-right"></i>'; break;
+                            case 'pull': icon = '<i class="bi bi-box-arrow-left"></i>'; break;
+                            case 'legs': icon = '<i class="bi bi-lightning"></i>'; break;
+                            case 'upper': icon = '<i class="bi bi-arrow-up-circle"></i>'; break;
+                            case 'lower': icon = '<i class="bi bi-arrow-down-circle"></i>'; break;
+                            case 'full-body': icon = '<i class="bi bi-person"></i>'; break;
+                            case 'rest': icon = '<i class="bi bi-battery-charging"></i>'; break;
+                            default: icon = '<i class="bi bi-grid"></i>'; break;
+                        }
+                        
+                        workoutBlock.innerHTML = `${icon} ${workout.type.charAt(0).toUpperCase() + workout.type.slice(1)}`;
+                        dayColumn.appendChild(workoutBlock);
+                    });
+                } else {
+                    // Empty day
+                    const emptyBlock = document.createElement('div');
+                    emptyBlock.className = 'workout-block empty';
+                    emptyBlock.innerHTML = '<i class="bi bi-plus"></i> Add Workout';
+                    dayColumn.appendChild(emptyBlock);
+                }
+                
+                calendarBody.appendChild(dayColumn);
+            });
+        } else {
+            // Show empty state
+            document.getElementById('empty-workout-plan').classList.remove('d-none');
+            document.getElementById('plan-display').classList.add('d-none');
+        }
+    }
+</script>
+{% endblock %}

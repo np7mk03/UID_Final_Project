@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>StrengthWise - {% block title %}Home{% endblock %}</title>
+    
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
+    
+    <!-- Bootstrap Icons -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.3/font/bootstrap-icons.css">
+    
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/main.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/visual-style.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/visual-learning.css') }}">
+    
+    {% block styles %}{% endblock %}
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar navbar-expand-lg navbar-dark bg-primary">
+        <div class="container">
+            <a class="navbar-brand d-flex align-items-center" href="/">
+                <div class="logo-container me-2">
+                    <svg width="36" height="36" viewBox="0 0 36 36" fill="none" xmlns="http://www.w3.org/2000/svg" class="logo-svg">
+                        <path d="M18 3C9.716 3 3 9.716 3 18C3 26.284 9.716 33 18 33C26.284 33 33 26.284 33 18C33 9.716 26.284 3 18 3Z" fill="#4361ee" opacity="0.2"/>
+                        <path d="M18 6C11.373 6 6 11.373 6 18C6 24.627 11.373 30 18 30C24.627 30 30 24.627 30 18C30 11.373 24.627 6 18 6Z" stroke="white" stroke-width="2" stroke-linecap="round"/>
+                        <path d="M18 12V24" stroke="white" stroke-width="3" stroke-linecap="round"/>
+                        <path d="M12 18H24" stroke="white" stroke-width="3" stroke-linecap="round"/>
+                        <path d="M14 14L22 22" stroke="white" stroke-width="2" stroke-linecap="round"/>
+                        <path d="M14 22L22 14" stroke="white" stroke-width="2" stroke-linecap="round"/>
+                    </svg>
+                </div>
+                <span class="brand-text">StrengthWise</span>
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item">
+                        <a class="nav-link" href="/"><i class="bi bi-house-door me-1"></i> Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="/exercises"><i class="bi bi-book me-1"></i> Learn</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="/quiz"><i class="bi bi-check-circle me-1"></i> Quiz</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="/planner"><i class="bi bi-calendar-check me-1"></i> Planner</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Main Content -->
+    <main>
+        {% block content %}{% endblock %}
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer mt-auto py-3 bg-light">
+        <div class="container text-center">
+            <div class="footer-logo mb-2">
+                <svg width="24" height="24" viewBox="0 0 36 36" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M18 3C9.716 3 3 9.716 3 18C3 26.284 9.716 33 18 33C26.284 33 33 26.284 33 18C33 9.716 26.284 3 18 3Z" fill="#4361ee" opacity="0.2"/>
+                    <path d="M18 6C11.373 6 6 11.373 6 18C6 24.627 11.373 30 18 30C24.627 30 30 24.627 30 18C30 11.373 24.627 6 18 6Z" stroke="#4361ee" stroke-width="2" stroke-linecap="round"/>
+                    <path d="M18 12V24" stroke="#4361ee" stroke-width="3" stroke-linecap="round"/>
+                    <path d="M12 18H24" stroke="#4361ee" stroke-width="3" stroke-linecap="round"/>
+                    <path d="M14 14L22 22" stroke="#4361ee" stroke-width="2" stroke-linecap="round"/>
+                    <path d="M14 22L22 14" stroke="#4361ee" stroke-width="2" stroke-linecap="round"/>
+                </svg>
+            </div>
+            <span class="text-muted">© 2025 StrengthWise | Strength Training Essentials</span>
+        </div>
+    </footer>
+
+    <!-- Bootstrap JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
+    
+    <!-- Custom JS -->
+    <script src="{{ url_for('static', filename='js/main.js') }}"></script>
+    <script src="{{ url_for('static', filename='js/visual-learning.js') }}"></script>
+    
+    {% block scripts %}{% endblock %}
+</body>
+</html>

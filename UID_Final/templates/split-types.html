@@ -1,0 +1,191 @@
+
+<div class="split-comparison mb-4">
+    <h5 class="text-center mb-3">Workout Split Comparison</h5>
+    
+    <!-- 3D Rotating Split Selector -->
+    <div class="split-selector-3d">
+        <div class="split-carousel">
+            <div class="split-card" id="full-body-card">
+                <div class="card-front">
+                    <h6>Full Body Split</h6>
+                    <div class="split-icon">
+                        <i class="bi bi-person-fill"></i>
+                    </div>
+                </div>
+                <div class="card-back">
+                    <ul class="split-features">
+                        <li><strong>Frequency:</strong> 3 days/week</li>
+                        <li><strong>Best for:</strong> Beginners</li>
+                        <li><strong>Recovery:</strong> 48 hours between sessions</li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="split-card" id="upper-lower-card">
+                <div class="card-front">
+                    <h6>Upper/Lower Split</h6>
+                    <div class="split-icon">
+                        <i class="bi bi-person-fill-up"></i>
+                    </div>
+                </div>
+                <div class="card-back">
+                    <ul class="split-features">
+                        <li><strong>Frequency:</strong> 4 days/week</li>
+                        <li><strong>Best for:</strong> Intermediate</li>
+                        <li><strong>Recovery:</strong> 72 hours per muscle group</li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="split-card" id="ppl-card">
+                <div class="card-front">
+                    <h6>Push/Pull/Legs</h6>
+                    <div class="split-icon">
+                        <i class="bi bi-arrow-left-right"></i>
+                    </div>
+                </div>
+                <div class="card-back">
+                    <ul class="split-features">
+                        <li><strong>Frequency:</strong> 6 days/week</li>
+                        <li><strong>Best for:</strong> Advanced</li>
+                        <li><strong>Recovery:</strong> 72 hours per muscle group</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        
+        <div class="carousel-controls">
+            <button class="carousel-control" id="prev-split"><i class="bi bi-chevron-left"></i></button>
+            <button class="carousel-control" id="next-split"><i class="bi bi-chevron-right"></i></button>
+        </div>
+    </div>
+    
+    <!-- Interactive Weekly Calendar -->
+    <div class="weekly-calendar">
+        <h6 class="text-center mb-3">Weekly Training Schedule</h6>
+        <div class="calendar-container">
+            <div class="day-headers">
+                <div class="day-header">Mon</div>
+                <div class="day-header">Tue</div>
+                <div class="day-header">Wed</div>
+                <div class="day-header">Thu</div>
+                <div class="day-header">Fri</div>
+                <div class="day-header">Sat</div>
+                <div class="day-header">Sun</div>
+            </div>
+            
+            <!-- Full Body Calendar (default visible) -->
+            <div class="split-calendar active" id="full-body-calendar">
+                <div class="workout-cell full-body">Full</div>
+                <div class="workout-cell rest">Rest</div>
+                <div class="workout-cell full-body">Full</div>
+                <div class="workout-cell rest">Rest</div>
+                <div class="workout-cell full-body">Full</div>
+                <div class="workout-cell rest">Rest</div>
+                <div class="workout-cell rest">Rest</div>
+            </div>
+            
+            <!-- Upper/Lower Calendar (initially hidden) -->
+            <div class="split-calendar" id="upper-lower-calendar">
+                <div class="workout-cell upper">Upper</div>
+                <div class="workout-cell lower">Lower</div>
+                <div class="workout-cell rest">Rest</div>
+                <div class="workout-cell upper">Upper</div>
+                <div class="workout-cell lower">Lower</div>
+                <div class="workout-cell rest">Rest</div>
+                <div class="workout-cell rest">Rest</div>
+            </div>
+            
+            <!-- PPL Calendar (initially hidden) -->
+            <div class="split-calendar" id="ppl-calendar">
+                <div class="workout-cell push">Push</div>
+                <div class="workout-cell pull">Pull</div>
+                <div class="workout-cell legs">Legs</div>
+                <div class="workout-cell push">Push</div>
+                <div class="workout-cell pull">Pull</div>
+                <div class="workout-cell legs">Legs</div>
+                <div class="workout-cell rest">Rest</div>
+            </div>
+        </div>
+    </div>
+    
+    <!-- Interactive Split Builder -->
+    <div class="split-builder">
+        <h6 class="text-center mb-3">Build Your Custom Split</h6>
+        <div class="builder-container">
+            <div class="builder-options">
+                <div class="option-group">
+                    <label>Training days per week:</label>
+                    <div class="days-selector">
+                        <button class="day-btn" data-days="2">2</button>
+                        <button class="day-btn" data-days="3">3</button>
+                        <button class="day-btn active" data-days="4">4</button>
+                        <button class="day-btn" data-days="5">5</button>
+                        <button class="day-btn" data-days="6">6</button>
+                    </div>
+                </div>
+                
+                <div class="option-group">
+                    <label>Experience level:</label>
+                    <div class="level-selector">
+                        <button class="level-btn active" data-level="beginner">Beginner</button>
+                        <button class="level-btn" data-level="intermediate">Intermediate</button>
+                        <button class="level-btn" data-level="advanced">Advanced</button>
+                    </div>
+                </div>
+                
+                <div class="option-group">
+                    <label>Primary goal:</label>
+                    <div class="goal-selector">
+                        <button class="goal-btn active" data-goal="strength">Strength</button>
+                        <button class="goal-btn" data-goal="hypertrophy">Muscle Size</button>
+                        <button class="goal-btn" data-goal="endurance">Endurance</button>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="builder-result">
+                <div class="result-header">
+                    <h6>Recommended Split:</h6>
+                    <div class="recommendation-badge" id="split-recommendation">Upper/Lower Split</div>
+                </div>
+                
+                <div class="result-details">
+                    <p>Based on your selections, we recommend an <strong>Upper/Lower Split</strong> with 4 training days per week. This provides optimal frequency and recovery for your experience level and goals.</p>
+                    
+                    <div class="muscle-frequency-chart">
+                        <div class="chart-label">Muscle Group Training Frequency</div>
+                        <div class="chart-bars">
+                            <div class="chart-bar">
+                                <div class="bar-label">Chest</div>
+                                <div class="bar-container">
+                                    <div class="bar-fill" style="width: 50%;">2x/week</div>
+                                </div>
+                            </div>
+                            <div class="chart-bar">
+                                <div class="bar-label">Back</div>
+                                <div class="bar-container">
+                                    <div class="bar-fill" style="width: 50%;">2x/week</div>
+                                </div>
+                            </div>
+                            <div class="chart-bar">
+                                <div class="bar-label">Legs</div>
+                                <div class="bar-container">
+                                    <div class="bar-fill" style="width: 50%;">2x/week</div>
+                                </div>
+                            </div>
+                            <div class="chart-bar">
+                                <div class="bar-label">Arms</div>
+                                <div class="bar-container">
+                                    <div class="bar-fill" style="width: 50%;">2x/week</div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <button class="btn btn-primary mt-3" id="apply-split">Apply This Split</button>
+            </div>
+        </div>
+    </div>
+</div>

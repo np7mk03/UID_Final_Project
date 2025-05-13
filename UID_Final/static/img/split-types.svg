@@ -1,0 +1,219 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 500" width="800" height="500">
+  <!-- Background -->
+  <rect width="800" height="500" fill="#f8f9fa" rx="15" ry="15"/>
+  
+  <!-- Title -->
+  <text x="400" y="50" font-family="Arial, sans-serif" font-size="24" font-weight="bold" text-anchor="middle" fill="#212529">Workout Split Types</text>
+  
+  <!-- Full Body Split -->
+  <g transform="translate(150, 150)">
+    <!-- Card -->
+    <rect x="-100" y="-50" width="200" height="250" fill="white" stroke="#dee2e6" stroke-width="2" rx="10" ry="10"/>
+    
+    <!-- Header -->
+    <rect x="-100" y="-50" width="200" height="40" fill="#4cc9f0" rx="10" ry="10"/>
+    <rect x="-100" y="-50" width="200" height="10" fill="#4cc9f0" rx="10" ry="10"/>
+    <text x="0" y="-20" font-family="Arial, sans-serif" font-size="16" font-weight="bold" text-anchor="middle" fill="white">Full Body Split</text>
+    
+    <!-- Badge -->
+    <rect x="30" y="-35" width="60" height="20" fill="white" rx="10" ry="10" opacity="0.3"/>
+    <text x="60" y="-20" font-family="Arial, sans-serif" font-size="10" font-weight="bold" text-anchor="middle" fill="white">Beginner</text>
+    
+    <!-- Weekly Calendar -->
+    <g transform="translate(0, 20)">
+      <!-- Days -->
+      <text x="-85" y="0" font-family="Arial, sans-serif" font-size="10" fill="#6c757d">Mon</text>
+      <text x="-55" y="0" font-family="Arial, sans-serif" font-size="10" fill="#6c757d">Tue</text>
+      <text x="-25" y="0" font-family="Arial, sans-serif" font-size="10" fill="#6c757d">Wed</text>
+      <text x="5" y="0" font-family="Arial, sans-serif" font-size="10" fill="#6c757d">Thu</text>
+      <text x="35" y="0" font-family="Arial, sans-serif" font-size="10" fill="#6c757d">Fri</text>
+      <text x="65" y="0" font-family="Arial, sans-serif" font-size="10" fill="#6c757d">Sat</text>
+      <text x="85" y="0" font-family="Arial, sans-serif" font-size="10" fill="#6c757d">Sun</text>
+      
+      <!-- Workout Blocks -->
+      <rect x="-90" y="10" width="20" height="20" fill="#7209b7" rx="3" ry="3"/>
+      <text x="-80" y="24" font-family="Arial, sans-serif" font-size="10" font-weight="bold" text-anchor="middle" fill="white">F</text>
+      
+      <rect x="-60" y="10" width="20" height="20" fill="#6c757d" rx="3" ry="3"/>
+      <text x="-50" y="24" font-family="Arial, sans-serif" font-size="10" font-weight="bold" text-anchor="middle" fill="white">R</text>
+      
+      <rect x="-30" y="10" width="20" height="20" fill="#7209b7" rx="3" ry="3"/>
+      <text x="-20" y="24" font-family="Arial, sans-serif" font-size="10" font-weight="bold" text-anchor="middle" fill="white">F</text>
+      
+      <rect x="0" y="10" width="20" height="20" fill="#6c757d" rx="3" ry="3"/>
+      <text x="10" y="24" font-family="Arial, sans-serif" font-size="10" font-weight="bold" text-anchor="middle" fill="white">R</text>
+      
+      <rect x="30" y="10" width="20" height="20" fill="#7209b7" rx="3" ry="3"/>
+      <text x="40" y="24" font-family="Arial, sans-serif" font-size="10" font-weight="bold" text-anchor="middle" fill="white">F</text>
+      
+      <rect x="60" y="10" width="20" height="20" fill="#6c757d" rx="3" ry="3"/>
+      <text x="70" y="24" font-family="Arial, sans-serif" font-size="10" font-weight="bold" text-anchor="middle" fill="white">R</text>
+      
+      <rect x="80" y="10" width="20" height="20" fill="#6c757d" rx="3" ry="3"/>
+      <text x="90" y="24" font-family="Arial, sans-serif" font-size="10" font-weight="bold" text-anchor="middle" fill="white">R</text>
+    </g>
+    
+    <!-- Info -->
+    <line x1="-80" y1="60" x2="80" y2="60" stroke="#dee2e6" stroke-width="1"/>
+    
+    <text x="-90" y="80" font-family="Arial, sans-serif" font-size="12" font-weight="bold" fill="#495057">Frequency:</text>
+    <text x="0" y="80" font-family="Arial, sans-serif" font-size="12" fill="#495057">3 days/week</text>
+    
+    <text x="-90" y="100" font-family="Arial, sans-serif" font-size="12" font-weight="bold" fill="#495057">Target:</text>
+    <text x="0" y="100" font-family="Arial, sans-serif" font-size="12" fill="#495057">All muscle groups</text>
+    <text x="0" y="115" font-family="Arial, sans-serif" font-size="12" fill="#495057">each workout</text>
+    
+    <text x="-90" y="135" font-family="Arial, sans-serif" font-size="12" font-weight="bold" fill="#495057">Best for:</text>
+    <text x="0" y="135" font-family="Arial, sans-serif" font-size="12" fill="#495057">Beginners, limited</text>
+    <text x="0" y="150" font-family="Arial, sans-serif" font-size="12" fill="#495057">time, general fitness</text>
+    
+    <text x="-90" y="170" font-family="Arial, sans-serif" font-size="12" font-weight="bold" fill="#495057">Recovery:</text>
+    <text x="0" y="170" font-family="Arial, sans-serif" font-size="12" fill="#495057">48 hours between</text>
+    <text x="0" y="185" font-family="Arial, sans-serif" font-size="12" fill="#495057">workouts</text>
+  </g>
+  
+  <!-- Upper/Lower Split -->
+  <g transform="translate(400, 150)">
+    <!-- Card -->
+    <rect x="-100" y="-50" width="200" height="250" fill="white" stroke="#dee2e6" stroke-width="2" rx="10" ry="10"/>
+    
+    <!-- Header -->
+    <rect x="-100" y="-50" width="200" height="40" fill="#4361ee" rx="10" ry="10"/>
+    <rect x="-100" y="-50" width="200" height="10" fill="#4361ee" rx="10" ry="10"/>
+    <text x="0" y="-20" font-family="Arial, sans-serif" font-size="16" font-weight="bold" text-anchor="middle" fill="white">Upper/Lower Split</text>
+    
+    <!-- Badge -->
+    <rect x="30" y="-35" width="60" height="20" fill="white" rx="10" ry="10" opacity="0.3"/>
+    <text x="60" y="-20" font-family="Arial, sans-serif" font-size="10" font-weight="bold" text-anchor="middle" fill="white">Intermediate</text>
+    
+    <!-- Weekly Calendar -->
+    <g transform="translate(0, 20)">
+      <!-- Days -->
+      <text x="-85" y="0" font-family="Arial, sans-serif" font-size="10" fill="#6c757d">Mon</text>
+      <text x="-55" y="0" font-family="Arial, sans-serif" font-size="10" fill="#6c757d">Tue</text>
+      <text x="-25" y="0" font-family="Arial, sans-serif" font-size="10" fill="#6c757d">Wed</text>
+      <text x="5" y="0" font-family="Arial, sans-serif" font-size="10" fill="#6c757d">Thu</text>
+      <text x="35" y="0" font-family="Arial, sans-serif" font-size="10" fill="#6c757d">Fri</text>
+      <text x="65" y="0" font-family="Arial, sans-serif" font-size="10" fill="#6c757d">Sat</text>
+      <text x="85" y="0" font-family="Arial, sans-serif" font-size="10" fill="#6c757d">Sun</text>
+      
+      <!-- Workout Blocks -->
+      <rect x="-90" y="10" width="20" height="20" fill="#4895ef" rx="3" ry="3"/>
+      <text x="-80" y="24" font-family="Arial, sans-serif" font-size="10" font-weight="bold" text-anchor="middle" fill="white">U</text>
+      
+      <rect x="-60" y="10" width="20" height="20" fill="#560bad" rx="3" ry="3"/>
+      <text x="-50" y="24" font-family="Arial, sans-serif" font-size="10" font-weight="bold" text-anchor="middle" fill="white">L</text>
+      
+      <rect x="-30" y="10" width="20" height="20" fill="#6c757d" rx="3" ry="3"/>
+      <text x="-20" y="24" font-family="Arial, sans-serif" font-size="10" font-weight="bold" text-anchor="middle" fill="white">R</text>
+      
+      <rect x="0" y="10" width="20" height="20" fill="#4895ef" rx="3" ry="3"/>
+      <text x="10" y="24" font-family="Arial, sans-serif" font-size="10" font-weight="bold" text-anchor="middle" fill="white">U</text>
+      
+      <rect x="30" y="10" width="20" height="20" fill="#560bad" rx="3" ry="3"/>
+      <text x="40" y="24" font-family="Arial, sans-serif" font-size="10" font-weight="bold" text-anchor="middle" fill="white">L</text>
+      
+      <rect x="60" y="10" width="20" height="20" fill="#6c757d" rx="3" ry="3"/>
+      <text x="70" y="24" font-family="Arial, sans-serif" font-size="10" font-weight="bold" text-anchor="middle" fill="white">R</text>
+      
+      <rect x="80" y="10" width="20" height="20" fill="#6c757d" rx="3" ry="3"/>
+      <text x="90" y="24" font-family="Arial, sans-serif" font-size="10" font-weight="bold" text-anchor="middle" fill="white">R</text>
+    </g>
+    
+    <!-- Info -->
+    <line x1="-80" y1="60" x2="80" y2="60" stroke="#dee2e6" stroke-width="1"/>
+    
+    <text x="-90" y="80" font-family="Arial, sans-serif" font-size="12" font-weight="bold" fill="#495057">Frequency:</text>
+    <text x="0" y="80" font-family="Arial, sans-serif" font-size="12" fill="#495057">4 days/week</text>
+    
+    <text x="-90" y="100" font-family="Arial, sans-serif" font-size="12" font-weight="bold" fill="#495057">Target:</text>
+    <text x="0" y="100" font-family="Arial, sans-serif" font-size="12" fill="#495057">Upper body (2x)</text>
+    <text x="0" y="115" font-family="Arial, sans-serif" font-size="12" fill="#495057">Lower body (2x)</text>
+    
+    <text x="-90" y="135" font-family="Arial, sans-serif" font-size="12" font-weight="bold" fill="#495057">Best for:</text>
+    <text x="0" y="135" font-family="Arial, sans-serif" font-size="12" fill="#495057">Intermediate lifters,</text>
+    <text x="0" y="150" font-family="Arial, sans-serif" font-size="12" fill="#495057">balanced development</text>
+    
+    <text x="-90" y="170" font-family="Arial, sans-serif" font-size="12" font-weight="bold" fill="#495057">Recovery:</text>
+    <text x="0" y="170" font-family="Arial, sans-serif" font-size="12" fill="#495057">48+ hours between</text>
+    <text x="0" y="185" font-family="Arial, sans-serif" font-size="12" fill="#495057">similar workouts</text>
+  </g>
+  
+  <!-- Push/Pull/Legs Split -->
+  <g transform="translate(650, 150)">
+    <!-- Card -->
+    <rect x="-100" y="-50" width="200" height="250" fill="white" stroke="#dee2e6" stroke-width="2" rx="10" ry="10"/>
+    
+    <!-- Header -->
+    <rect x="-100" y="-50" width="200" height="40" fill="#f72585" rx="10" ry="10"/>
+    <rect x="-100" y="-50" width="200" height="10" fill="#f72585" rx="10" ry="10"/>
+    <text x="0" y="-20" font-family="Arial, sans-serif" font-size="16" font-weight="bold" text-anchor="middle" fill="white">Push/Pull/Legs</text>
+    
+    <!-- Badge -->
+    <rect x="30" y="-35" width="60" height="20" fill="white" rx="10" ry="10" opacity="0.3"/>
+    <text x="60" y="-20" font-family="Arial, sans-serif" font-size="10" font-weight="bold" text-anchor="middle" fill="white">Advanced</text>
+    
+    <!-- Weekly Calendar -->
+    <g transform="translate(0, 20)">
+      <!-- Days -->
+      <text x="-85" y="0" font-family="Arial, sans-serif" font-size="10" fill="#6c757d">Mon</text>
+      <text x="-55" y="0" font-family="Arial, sans-serif" font-size="10" fill="#6c757d">Tue</text>
+      <text x="-25" y="0" font-family="Arial, sans-serif" font-size="10" fill="#6c757d">Wed</text>
+      <text x="5" y="0" font-family="Arial, sans-serif" font-size="10" fill="#6c757d">Thu</text>
+      <text x="35" y="0" font-family="Arial, sans-serif" font-size="10" fill="#6c757d">Fri</text>
+      <text x="65" y="0" font-family="Arial, sans-serif" font-size="10" fill="#6c757d">Sat</text>
+      <text x="85" y="0" font-family="Arial, sans-serif" font-size="10" fill="#6c757d">Sun</text>
+      
+      <!-- Workout Blocks -->
+      <rect x="-90" y="10" width="20" height="20" fill="#4361ee" rx="3" ry="3"/>
+      <text x="-80" y="24" font-family="Arial, sans-serif" font-size="10" font-weight="bold" text-anchor="middle" fill="white">P</text>
+      
+      <rect x="-60" y="10" width="20" height="20" fill="#3a0ca3" rx="3" ry="3"/>
+      <text x="-50" y="24" font-family="Arial, sans-serif" font-size="10" font-weight="bold" text-anchor="middle" fill="white">P</text>
+      
+      <rect x="-30" y="10" width="20" height="20" fill="#f72585" rx="3" ry="3"/>
+      <text x="-20" y="24" font-family="Arial, sans-serif" font-size="10" font-weight="bold" text-anchor="middle" fill="white">L</text>
+      
+      <rect x="0" y="10" width="20" height="20" fill="#4361ee" rx="3" ry="3"/>
+      <text x="10" y="24" font-family="Arial, sans-serif" font-size="10" font-weight="bold" text-anchor="middle" fill="white">P</text>
+      
+      <rect x="30" y="10" width="20" height="20" fill="#3a0ca3" rx="3" ry="3"/>
+      <text x="40" y="24" font-family="Arial, sans-serif" font-size="10" font-weight="bold" text-anchor="middle" fill="white">P</text>
+      
+      <rect x="60" y="10" width="20" height="20" fill="#f72585" rx="3" ry="3"/>
+      <text x="70" y="24" font-family="Arial, sans-serif" font-size="10" font-weight="bold" text-anchor="middle" fill="white">L</text>
+      
+      <rect x="80" y="10" width="20" height="20" fill="#6c757d" rx="3" ry="3"/>
+      <text x="90" y="24" font-family="Arial, sans-serif" font-size="10" font-weight="bold" text-anchor="middle" fill="white">R</text>
+    </g>
+    
+    <!-- Info -->
+    <line x1="-80" y1="60" x2="80" y2="60" stroke="#dee2e6" stroke-width="1"/>
+    
+    <text x="-90" y="80" font-family="Arial, sans-serif" font-size="12" font-weight="bold" fill="#495057">Frequency:</text>
+    <text x="0" y="80" font-family="Arial, sans-serif" font-size="12" fill="#495057">6 days/week</text>
+    
+    <text x="-90" y="100" font-family="Arial, sans-serif" font-size="12" font-weight="bold" fill="#495057">Target:</text>
+    <text x="0" y="100" font-family="Arial, sans-serif" font-size="12" fill="#495057">Push: chest/shoulders/tri</text>
+    <text x="0" y="115" font-family="Arial, sans-serif" font-size="12" fill="#495057">Pull: back/biceps</text>
+    <text x="0" y="130" font-family="Arial, sans-serif" font-size="12" fill="#495057">Legs: quads/hams/calves</text>
+    
+    <text x="-90" y="150" font-family="Arial, sans-serif" font-size="12" font-weight="bold" fill="#495057">Best for:</text>
+    <text x="0" y="150" font-family="Arial, sans-serif" font-size="12" fill="#495057">Advanced lifters,</text>
+    <text x="0" y="165" font-family="Arial, sans-serif" font-size="12" fill="#495057">high volume training</text>
+    
+    <text x="-90" y="185" font-family="Arial, sans-serif" font-size="12" font-weight="bold" fill="#495057">Recovery:</text>
+    <text x="0" y="185" font-family="Arial, sans-serif" font-size="12" fill="#495057">72 hours per muscle</text>
+  </g>
+  
+  <!-- Split Selection Guide -->
+  <g transform="translate(400, 420)">
+    <rect x="-350" y="-30" width="700" height="80" fill="white" stroke="#f72585" stroke-width="2" rx="10" ry="10"/>
+    <text x="0" y="-5" font-family="Arial, sans-serif" font-size="16" font-weight="bold" text-anchor="middle" fill="#212529">How to Choose Your Split</text>
+    
+    <text x="-330" y="20" font-family="Arial, sans-serif" font-size="14" fill="#495057">• 2-3 days available → Full Body Split</text>
+    <text x="-330" y="45" font-family="Arial, sans-serif" font-size="14" fill="#495057">• 4 days available → Upper/Lower Split</text>
+    <text x="50" y="20" font-family="Arial, sans-serif" font-size="14" fill="#495057">• 5-6 days available → Push/Pull/Legs</text>
+    <text x="50" y="45" font-family="Arial, sans-serif" font-size="14" fill="#495057">• Always include at least 1 rest day per week</text>
+  </g>
+</svg>
